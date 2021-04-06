@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../components/header';
+import Search from './search';
 
 export default function Home(props) {
   return (
     <>
-      <Header />
+      <Search />
     </>
   );
 }
