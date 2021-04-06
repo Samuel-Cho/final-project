@@ -1,3 +1,33 @@
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: #142850;
+  color: white;
+  height: 90px;
+  width: 100%;
+}
+
+.column-one-fourth {
+  width: 25%;
+}
+
+.column-three-fourth {
+  width: 75%;
+}
+
 .app-name {
   font-family: 'Spectral', serif;
+  margin: 0;
+}
+
+.drawer-container {
+  text-align: center;
+}
+
+.fa-bars {
+  font-size: 1.5rem;
 }
