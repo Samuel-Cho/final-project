@@ -71,6 +71,11 @@ header {
   color: #dae1e7;
 }
 
+.location-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #00909e;
+}
+
 .food-type-container {
   display: flex;
   flex-wrap: wrap;
