@@ -10,7 +10,8 @@ export default class SearchForm extends React.Component {
             id="location"
             type="text"
             name="location"
-            className="location-search" />
+            className="location-search"
+            placeholder="Location" />
         </div>
         <div className="food-type-container">
           <button className="food-type" id="korean">Korean</button>
@@ -24,7 +25,7 @@ export default class SearchForm extends React.Component {
           <button className="food-type" id="vietnamese">Vietnamese</button>
         </div>
         <div className="search-button-container">
-          <button className="submit-button" type="submit">Search</button>
+          <button className="search-button" type="submit">Search</button>
         </div>
       </form>
     );

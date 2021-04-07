@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+#root {
+  height: 100vh;
+  width: 100%;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -32,9 +37,74 @@ header {
   font-size: 1.5rem;
 }
 
+.search-container {
+  padding: 35px;
+  height: 70%;
+  font-family: 'Rubik', sans-serif;
+}
+
+.search-form {
+  background-color: #dae1e7;
+  height: 100%;
+  border-radius: 15px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-search {
+  padding: 7px 20px;
+}
+
+.location-search,
+.food-type {
+  border: none;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.location-search::placeholder {
+  color: #dae1e7;
+}
+
+.food-type-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.food-type {
+  font-family: 'Rubik', sans-serif;
+  color: #292929;
+  background-color: white;
+  margin-bottom: 40px;
+  padding: 7px 20px;
+}
+
+.search-button-container {
+  text-align: center;
+}
+
+.search-button {
+  border: none;
+  border-radius: 15px;
+  background: #142850;
+  color: white;
+  font-size: 18px;
+  padding: 10px 25px;
+}
+
+.location-search:hover,
+.food-type:hover,
+.search-button:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   header {
-    height: 115px;
+    height: 90px;
   }
 
   .app-name-container {
@@ -45,12 +115,20 @@ header {
 
   .app-name {
     position: absolute;
-    top: 25%;
-    left: 27%;
+    top: 15%;
+    left: 25%;
     font-size: 2.5rem;
   }
 
   .fa-bars {
     font-size: 2rem;
+  }
+
+  .search-form {
+    height: 95%;
+  }
+
+  .location-search {
+    width: 250px;
   }
 }
