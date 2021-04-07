@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     return (
       <header>
         <div className="drawer-container column-one-fourth">
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars drawer"></i>
         </div>
         <div className="app-name-container column-three-fourth">
           <h1 className="app-name">Teeter Taste</h1>
