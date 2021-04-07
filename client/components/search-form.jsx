@@ -1,6 +1,20 @@
 import React from 'react';
 
 export default class SearchForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    // console.log(this.state);
+  }
+
   render() {
     return (
       <>
@@ -12,7 +26,8 @@ export default class SearchForm extends React.Component {
               type="text"
               name="location"
               className="location-search"
-              placeholder="Location" />
+              placeholder="Location"
+              onChange={this.handleChange} />
           </div>
           <div className="food-type-container">
             <button className="food-type" id="korean">Korean</button>
@@ -37,7 +52,8 @@ export default class SearchForm extends React.Component {
               type="text"
               name="location"
               className="location-search"
-              placeholder="Location" />
+              placeholder="Location"
+              onChange={this.handleChange} />
             <button className="search-button" type="submit">Search</button>
           </div>
           <div className="food-type-container">
