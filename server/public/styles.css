@@ -1,7 +1,3 @@
-.desktop {
-  display: none;
-}
-
 body {
   margin: 0;
 }
@@ -104,13 +100,18 @@ header {
 
 .location-search:hover,
 .food-type:hover,
-.search-button:hover {
+.search-button:hover,
+.fa-bars:hover {
   cursor: pointer;
+}
+
+.desktop {
+  display: none;
 }
 
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   .desktop {
-    display: block;
+    display: flex;
   }
 
   .mobile {
@@ -119,6 +120,10 @@ header {
 
   header {
     height: 90px;
+  }
+
+  .drawer-container {
+    text-align: end;
   }
 
   .app-name-container {
@@ -140,7 +145,10 @@ header {
 
   .search-form {
     height: 95%;
-    width: 80%;
+
+    /* width: 80%; */
+    width: 63%;
+    justify-content: unset;
   }
 
   .location-search {
@@ -149,10 +157,34 @@ header {
 
   .food-type-container {
     width: 85%;
+    margin-top: 40px;
   }
 
   .food-type {
-    margin-left: 30px;
-    margin-right: 30px;
+    /* margin-left: 30px;
+    margin-right: 30px; */
+    margin: 40px 30px;
+  }
+
+  .search-button {
+    margin-left: 20px;
+    padding: 10px 20px;
+  }
+
+  .column-one-third {
+    display: flex;
+    width: calc(100% / 3);
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .right {
+    justify-content: flex-end;
   }
 }

@@ -41,15 +41,33 @@ export default class SearchForm extends React.Component {
             <button className="search-button" type="submit">Search</button>
           </div>
           <div className="food-type-container">
-            <button className="food-type" id="korean">Korean</button>
-            <button className="food-type" id="italian">Italian</button>
-            <button className="food-type" id="chinese">Chinese</button>
-            <button className="food-type" id="burgers">Burgers</button>
-            <button className="food-type" id="japanese">Japanese</button>
-            <button className="food-type" id="thai">Thai</button>
-            <button className="food-type" id="mexican">Mexican</button>
-            <button className="food-type" id="pizza">Pizza</button>
-            <button className="food-type" id="vietnamese">Vietnamese</button>
+            <div className="column-one-third left">
+              <button className="food-type" id="korean">Korean</button>
+            </div>
+            <div className="column-one-third center">
+              <button className="food-type" id="italian">Italian</button>
+            </div>
+            <div className="column-one-third right">
+              <button className="food-type" id="chinese">Chinese</button>
+            </div>
+            <div className="column-one-third left">
+              <button className="food-type" id="burgers">Burgers</button>
+            </div>
+            <div className="column-one-third center">
+              <button className="food-type" id="japanese">Japanese</button>
+            </div>
+            <div className="column-one-third right">
+              <button className="food-type" id="thai">Thai</button>
+            </div>
+            <div className="column-one-third left">
+              <button className="food-type" id="mexican">Mexican</button>
+            </div>
+            <div className="column-one-third center">
+              <button className="food-type" id="pizza">Pizza</button>
+            </div>
+            <div className="column-one-third right">
+              <button className="food-type" id="vietnamese">Vietnamese</button>
+            </div>
           </div>
         </form>
       </>
