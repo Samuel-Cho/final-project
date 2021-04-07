@@ -12,9 +12,6 @@ export default class SearchForm extends React.Component {
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value.toLowerCase() });
-    // () => {
-    //   console.log(this.state);
-    // });
   }
 
   render() {
