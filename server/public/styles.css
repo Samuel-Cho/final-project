@@ -90,6 +90,11 @@ header {
   padding: 7px 20px;
 }
 
+.selected {
+  background-color: #00909e;
+  color: white;
+}
+
 .search-button-container {
   text-align: center;
 }
