@@ -18,12 +18,19 @@ export default class App extends React.Component {
     });
   }
 
+  renderPage() {
+    if (this.state.route.path === '') {
+      return <Home />;
+    } else if (this.state.route.path === 'searchResults') {
+      return <div className="placeholderForCommit"></div>;
+    }
+  }
+
   render() {
-    // console.log(this.state);
     return (
     <>
       <Header />
-      <Home />
+      {this.renderPage()}
     </>
     );
   }
