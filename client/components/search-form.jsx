@@ -57,6 +57,7 @@ export default class SearchForm extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -67,6 +68,10 @@ export default class SearchForm extends React.Component {
   handleClick(event) {
     const { id } = event.target;
     this.setState({ foodType: id });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
 
   }
 
@@ -119,7 +124,7 @@ export default class SearchForm extends React.Component {
     }
     return (
       <>
-        <form className="search-form mobile">
+        <form onSubmit={this.handleSubmit} className="search-form mobile">
           <div className="location-container">
             <input
               required
@@ -138,7 +143,7 @@ export default class SearchForm extends React.Component {
             <button className="search-button" type="submit">Search</button>
           </div>
         </form>
-        <form className="search-form desktop">
+        <form onSubmit={this.handleSubmit} className="search-form desktop">
           <div className="location-container">
             <input
               required
@@ -152,33 +157,6 @@ export default class SearchForm extends React.Component {
           </div>
           <div className="food-type-container">
             {divItemsDesktop}
-            {/* <div className="column-one-third left">
-              <div className="food-type" id="korean">Korean</div>
-            </div>
-            <div className="column-one-third center">
-              <button className="food-type" id="italian">Italian</button>
-            </div>
-            <div className="column-one-third right">
-              <button className="food-type" id="chinese">Chinese</button>
-            </div>
-            <div className="column-one-third left">
-              <button className="food-type" id="burgers">Burgers</button>
-            </div>
-            <div className="column-one-third center">
-              <button className="food-type" id="japanese">Japanese</button>
-            </div>
-            <div className="column-one-third right">
-              <button className="food-type" id="thai">Thai</button>
-            </div>
-            <div className="column-one-third left">
-              <button className="food-type" id="mexican">Mexican</button>
-            </div>
-            <div className="column-one-third center">
-              <button className="food-type" id="pizza">Pizza</button>
-            </div>
-            <div className="column-one-third right">
-              <button className="food-type" id="vietnamese">Vietnamese</button>
-            </div> */}
           </div>
         </form>
       </>
