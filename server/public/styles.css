@@ -161,6 +161,7 @@ header {
 
   .location-search {
     width: 250px;
+    padding: 10px 20px;
   }
 
   .food-type-container {
@@ -170,6 +171,7 @@ header {
 
   .food-type {
     margin: 40px 30px;
+    padding: 10px 20px;
   }
 
   .search-button {
