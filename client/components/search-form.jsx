@@ -72,7 +72,7 @@ export default class SearchForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
+    window.location.hash = `searchResults?location=${this.state.location}&foodType=${this.state.foodType}`;
   }
 
   render() {
