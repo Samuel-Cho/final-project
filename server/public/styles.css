@@ -71,6 +71,11 @@ header {
   color: #dae1e7;
 }
 
+.location-search:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #00909e;
+}
+
 .food-type-container {
   display: flex;
   flex-wrap: wrap;
@@ -83,6 +88,11 @@ header {
   background-color: white;
   margin-bottom: 40px;
   padding: 7px 20px;
+}
+
+.selected {
+  background-color: #00909e;
+  color: white;
 }
 
 .search-button-container {
@@ -151,6 +161,7 @@ header {
 
   .location-search {
     width: 250px;
+    padding: 10px 20px;
   }
 
   .food-type-container {
@@ -160,6 +171,7 @@ header {
 
   .food-type {
     margin: 40px 30px;
+    padding: 10px 20px;
   }
 
   .search-button {
