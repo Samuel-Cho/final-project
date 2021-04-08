@@ -77,51 +77,33 @@ export default class SearchForm extends React.Component {
 
   render() {
     let divItemsMobile = null;
-    if (this.state.foodType === '') {
-      divItemsMobile = foodTypeList.map(foodType => {
+    divItemsMobile = foodTypeList.map(foodType => {
+      if (foodType.id === this.state.foodType) {
+        return (
+          <div onClick={this.handleClick} className="food-type selected" id={foodType.id} key={foodType.id}>{foodType.text}</div>
+        );
+      } else {
         return (
           <div onClick={this.handleClick} className="food-type" id={foodType.id} key={foodType.id}>{foodType.text}</div>
         );
-      });
-    } else {
-      divItemsMobile = foodTypeList.map(foodType => {
-        if (foodType.id === this.state.foodType) {
-          return (
-            <div onClick={this.handleClick} className="food-type selected" id={foodType.id} key={foodType.id}>{foodType.text}</div>
-          );
-        } else {
-          return (
-            <div onClick={this.handleClick} className="food-type" id={foodType.id} key={foodType.id}>{foodType.text}</div>
-          );
-        }
-      });
-    }
+      }
+    });
     let divItemsDesktop = null;
-    if (this.state.foodType === '') {
-      divItemsDesktop = foodTypeList.map(foodType => {
+    divItemsDesktop = foodTypeList.map(foodType => {
+      if (foodType.id === this.state.foodType) {
+        return (
+          <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
+            <div onClick={this.handleClick} className="food-type selected" id={foodType.id}>{foodType.text}</div>
+          </div>
+        );
+      } else {
         return (
           <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
             <div onClick={this.handleClick} className="food-type" id={foodType.id}>{foodType.text}</div>
           </div>
         );
-      });
-    } else {
-      divItemsDesktop = foodTypeList.map(foodType => {
-        if (foodType.id === this.state.foodType) {
-          return (
-            <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
-              <div onClick={this.handleClick} className="food-type selected" id={foodType.id}>{foodType.text}</div>
-            </div>
-          );
-        } else {
-          return (
-            <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
-              <div onClick={this.handleClick} className="food-type" id={foodType.id}>{foodType.text}</div>
-            </div>
-          );
-        }
-      });
-    }
+      }
+    });
     return (
       <>
         <form onSubmit={this.handleSubmit} className="search-form mobile">
