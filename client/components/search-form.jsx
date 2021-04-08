@@ -4,14 +4,22 @@ export default class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: ''
+      location: '',
+      foodType: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value.toLowerCase() });
+  }
+
+  handleClick(event) {
+    const { id } = event.target;
+    this.setState({ foodType: id });
+
   }
 
   render() {
@@ -26,18 +34,19 @@ export default class SearchForm extends React.Component {
               name="location"
               className="location-search"
               placeholder="Location"
-              onChange={this.handleChange} />
+              onChange={this.handleChange}
+              value={this.state.value} />
           </div>
           <div className="food-type-container">
-            <button className="food-type" id="korean">Korean</button>
-            <button className="food-type" id="italian">Italian</button>
-            <button className="food-type" id="chinese">Chinese</button>
-            <button className="food-type" id="burgers">Burgers</button>
-            <button className="food-type" id="japanese">Japanese</button>
-            <button className="food-type" id="thai">Thai</button>
-            <button className="food-type" id="mexican">Mexican</button>
-            <button className="food-type" id="pizza">Pizza</button>
-            <button className="food-type" id="vietnamese">Vietnamese</button>
+            <div onClick={this.handleClick} className="food-type" id="korean">Korean</div>
+            <div onClick={this.handleClick} className="food-type" id="italian">Italian</div>
+            <div onClick={this.handleClick} className="food-type" id="chinese">Chinese</div>
+            <div onClick={this.handleClick} className="food-type" id="burgers">Burgers</div>
+            <div onClick={this.handleClick} className="food-type" id="japanese">Japanese</div>
+            <div onClick={this.handleClick} className="food-type" id="thai">Thai</div>
+            <div onClick={this.handleClick} className="food-type" id="mexican">Mexican</div>
+            <div onClick={this.handleClick} className="food-type" id="pizza">Pizza</div>
+            <div onClick={this.handleClick} className="food-type" id="vietnamese">Vietnamese</div>
           </div>
           <div className="search-button-container">
             <button className="search-button" type="submit">Search</button>
