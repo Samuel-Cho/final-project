@@ -6,7 +6,7 @@ export default class SearchResults extends React.Component {
     this.state = {
       location: props.location,
       foodType: props.foodType,
-      restaurants: null
+      restaurants: []
     };
   }
 
@@ -17,9 +17,27 @@ export default class SearchResults extends React.Component {
   }
 
   render() {
-    return (
-      <div className="searchResultContainer">
+    // console.log(this.state.restaurants);
+    const restaurants = this.state.restaurants;
+    let divRestaruant = null;
+    divRestaruant = restaurants.map(restaurant => {
+      return (
+        <div key={restaurant.alias} className="restaurant">
+          <div className="image-container">
 
+          </div>
+          <div className="detail-container">
+
+          </div>
+          <div className="select-icon-container">
+
+          </div>
+        </div>
+      );
+    });
+    return (
+      <div className="restaurant-list-container">
+        {divRestaruant}
       </div>
     );
   }
