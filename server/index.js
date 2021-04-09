@@ -1,7 +1,6 @@
 require('dotenv/config');
 const express = require('express');
 const staticMiddleware = require('./static-middleware');
-// const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
 const ClientError = require('./client-error');
 const yelp = require('yelp-fusion');
