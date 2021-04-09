@@ -24,7 +24,7 @@ export default class SearchResults extends React.Component {
       return (
         <div key={restaurant.alias} className="restaurant">
           <div className="image-container">
-
+            <img className="restaurant-image" src={restaurant.image_url}></img>
           </div>
           <div className="detail-container">
 

@@ -131,6 +131,18 @@ header {
   display: none;
 }
 
+.restaurant-list-container {
+  padding: 35px;
+  height: 75%;
+  overflow-y: auto;
+}
+
+.restaurant-image {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   .desktop {
     display: flex;
