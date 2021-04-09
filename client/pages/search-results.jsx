@@ -9,8 +9,18 @@ export default class SearchResults extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch(`/api/search/${this.state.location}/${this.state.foodType}`)
+      .then(res => res.json());
+    // .then(businesses => console.log(businesses));
+  }
+
   render() {
     // console.log(this.state);
-    return <div>placeholder</div>;
+    return (
+      <div className="searchResultContainer">
+
+      </div>
+    );
   }
 }
