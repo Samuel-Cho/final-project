@@ -2,13 +2,17 @@ body {
   margin: 0;
 }
 
-#root {
+.background {
   height: 100vh;
   width: 100%;
 }
 
 .bg-pattens-blue {
   background-color: #dae1e7;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .bg-venice-blue {
@@ -20,7 +24,7 @@ header {
   align-items: center;
   background-color: #142850;
   color: white;
-  height: 90px;
+  height: 12%;
   width: 100%;
 }
 

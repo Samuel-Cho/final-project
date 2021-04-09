@@ -3,6 +3,7 @@ import Home from './pages/home';
 import Header from './components/header';
 import { parseRoute } from './lib';
 import SearchResults from './pages/search-results';
+import PageWrapper from './components/page-wrapper';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -34,8 +35,10 @@ export default class App extends React.Component {
   render() {
     return (
     <>
-      <Header />
-      {this.renderPage()}
+      <PageWrapper path={this.state.route.path}>
+        <Header />
+        {this.renderPage()}
+      </PageWrapper>
     </>
     );
   }

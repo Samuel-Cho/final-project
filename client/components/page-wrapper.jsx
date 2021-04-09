@@ -7,7 +7,7 @@ export default function PageWrapper(props) {
       ? 'bg-white'
       : 'bg-venice-blue';
   return (
-    <div className={background}>
+    <div className={`background ${background}`}>
       {props.children}
     </div>
   );
