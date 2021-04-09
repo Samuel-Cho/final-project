@@ -7,6 +7,14 @@ body {
   width: 100%;
 }
 
+.bg-pattens-blue {
+  background-color: #dae1e7;
+}
+
+.bg-venice-blue {
+  background-color: #27496d;
+}
+
 header {
   display: flex;
   align-items: center;
