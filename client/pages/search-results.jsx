@@ -27,7 +27,10 @@ export default class SearchResults extends React.Component {
             <img className="restaurant-image" src={restaurant.image_url}></img>
           </div>
           <div className="detail-container">
-
+            <p className="restaurant-name">{restaurant.name}</p>
+            <p className="restaurant-address">{restaurant.location.address1}</p>
+            <div className="restaurant-rating">{restaurant.rating}</div>
+            <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
           </div>
           <div className="select-icon-container">
 
