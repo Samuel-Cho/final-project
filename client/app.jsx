@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './pages/home';
 import Header from './components/header';
 import { parseRoute } from './lib';
+import SearchResults from './pages/search-results';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,7 +23,11 @@ export default class App extends React.Component {
     if (this.state.route.path === '') {
       return <Home />;
     } else if (this.state.route.path === 'searchResults') {
-      return <div className="placeholderForCommit"></div>;
+      return (
+        <SearchResults
+          location={this.state.route.params.get('location')}
+          foodType={this.state.route.params.get('foodType')} />
+      );
     }
   }
 
