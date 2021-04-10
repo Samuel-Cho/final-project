@@ -143,6 +143,10 @@ header {
   object-fit: cover;
 }
 
+.star {
+  color: #00909e;
+}
+
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   .desktop {
     display: flex;

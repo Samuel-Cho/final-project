@@ -1,4 +1,5 @@
 import React from 'react';
+import StarRating from '../components/star-rating';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -29,7 +30,9 @@ export default class SearchResults extends React.Component {
           <div className="detail-container">
             <p className="restaurant-name">{restaurant.name}</p>
             <p className="restaurant-address">{restaurant.location.address1}</p>
-            <div className="restaurant-rating">{restaurant.rating}</div>
+            <div className="restaurant-rating">
+              <StarRating rating={restaurant.rating} />
+            </div>
             <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
           </div>
           <div className="select-icon-container">
