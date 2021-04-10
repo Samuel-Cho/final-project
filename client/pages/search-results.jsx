@@ -33,7 +33,7 @@ export default class SearchResults extends React.Component {
             <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
           </div>
           <div className="select-icon-container">
-
+            <i className="far fa-check-circle unchecked"></i>
           </div>
         </div>
       );
