@@ -132,15 +132,30 @@ header {
 }
 
 .restaurant-list-container {
-  padding: 35px;
+  padding: 50px;
   height: 75%;
   overflow-y: auto;
 }
 
+.restaurant {
+  background-color: white;
+  margin-bottom: 35px;
+  display: flex;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.image-container {
+  margin-right: 10px;
+}
+
 .restaurant-image {
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
+}
+
+.detail-container {
+  font-size: 0.9rem;
 }
 
 .star {
