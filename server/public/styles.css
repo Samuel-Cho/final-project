@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: 'Rubik', sans-serif;
 }
 
 .background {
@@ -132,16 +133,19 @@ header {
 }
 
 .restaurant-list-container {
-  padding: 50px;
-  height: 75%;
-  overflow-y: auto;
+  margin: 40px 0 40px 0;
+  padding: 0 40px 0 40px;
+  height: 78%;
+  overflow-y: scroll;
 }
 
 .restaurant {
+  border-radius: 4px;
   background-color: white;
   margin-bottom: 35px;
   display: flex;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  height: 80px;
 }
 
 .image-container {
@@ -152,14 +156,48 @@ header {
   height: 80px;
   width: 80px;
   object-fit: cover;
+  border-radius: 4px 0 0 4px;
 }
 
 .detail-container {
+  font-size: 0.8rem;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.restaurant-address {
+  display: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.restaurant-name {
   font-size: 0.9rem;
 }
 
 .star {
+  font-size: 0.85rem;
+}
+
+.star,
+.unchecked {
   color: #00909e;
+}
+
+.select-icon-container {
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unchecked {
+  font-size: 2.3rem;
 }
 
 @media screen and (min-width: 1000px) and (orientation: landscape) {
