@@ -18,7 +18,6 @@ export default class SearchResults extends React.Component {
   }
 
   render() {
-    // console.log(this.state.restaurants);
     const restaurants = this.state.restaurants;
     let divRestaruantMobile = null;
     divRestaruantMobile = restaurants.map(restaurant => {
