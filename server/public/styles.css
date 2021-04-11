@@ -276,4 +276,28 @@ p {
   .right {
     justify-content: flex-end;
   }
+
+  .restaurant-list-container {
+    width: 63%;
+    margin: 40px auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .one-third-column {
+    height: 320px;
+    width: 27%;
+    display: block;
+  }
+
+  .image-container {
+    margin-right: 0;
+  }
+
+  .restaurant-image {
+    width: 100%;
+    height: 200px;
+  }
 }

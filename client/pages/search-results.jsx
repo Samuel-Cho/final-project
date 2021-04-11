@@ -23,7 +23,7 @@ export default class SearchResults extends React.Component {
     let divRestaruant = null;
     divRestaruant = restaurants.map(restaurant => {
       return (
-        <div key={restaurant.alias} className="restaurant">
+        <div key={restaurant.alias} className="restaurant one-third-column">
           <div className="image-container">
             <img className="restaurant-image" src={restaurant.image_url}></img>
           </div>
