@@ -20,8 +20,8 @@ export default class SearchResults extends React.Component {
   render() {
     // console.log(this.state.restaurants);
     const restaurants = this.state.restaurants;
-    let divRestaruant = null;
-    divRestaruant = restaurants.map(restaurant => {
+    let divRestaruantMobile = null;
+    divRestaruantMobile = restaurants.map(restaurant => {
       return (
         <div key={restaurant.alias} className="restaurant one-third-column">
           <div className="image-container">
@@ -41,10 +41,38 @@ export default class SearchResults extends React.Component {
         </div>
       );
     });
+    let divRestaruantDesktop = null;
+    divRestaruantDesktop = restaurants.map(restaurant => {
+      return (
+        <div key={restaurant.alias} className="restaurant one-third-column">
+          <div className="image-container">
+            <img className="restaurant-image" src={restaurant.image_url}></img>
+          </div>
+          <div className="bottom-container">
+            <div className="detail-container">
+              <p className="restaurant-name">{restaurant.name}</p>
+              <p className="restaurant-address">{restaurant.location.address1}</p>
+              <div className="restaurant-rating">
+                <StarRating rating={restaurant.rating} />
+              </div>
+              <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
+            </div>
+            <div className="select-icon-container">
+              <i className="far fa-check-circle unchecked"></i>
+            </div>
+          </div>
+        </div>
+      );
+    });
     return (
-      <div className="restaurant-list-container">
-        {divRestaruant}
-      </div>
+      <>
+        <div className="restaurant-list-container mobile">
+          {divRestaruantMobile}
+        </div>
+        <div className="restaurant-list-container desktop">
+          {divRestaruantDesktop}
+        </div>
+      </>
     );
   }
 }
