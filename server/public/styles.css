@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Rubik', sans-serif;
+  color: #292929;
 }
 
 .background {
@@ -53,7 +54,8 @@ header {
 .search-container {
   padding: 35px;
   height: 70%;
-  font-family: 'Rubik', sans-serif;
+
+  /* font-family: 'Rubik', sans-serif; */
   display: flex;
   justify-content: center;
 }
@@ -96,8 +98,8 @@ header {
 }
 
 .food-type {
-  font-family: 'Rubik', sans-serif;
-  color: #292929;
+  /* font-family: 'Rubik', sans-serif;
+  color: #292929; */
   background-color: white;
   margin-bottom: 40px;
   padding: 7px 20px;
@@ -126,10 +128,6 @@ header {
 .search-button:hover,
 .drawer:hover {
   cursor: pointer;
-}
-
-.desktop {
-  display: none;
 }
 
 .restaurant-list-container {
@@ -178,6 +176,7 @@ p {
 
 .restaurant-name {
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .star {
@@ -200,13 +199,13 @@ p {
   font-size: 2.3rem;
 }
 
+.desktop {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   .desktop {
     display: flex;
-  }
-
-  .mobile {
-    display: none;
   }
 
   header {
@@ -294,10 +293,49 @@ p {
 
   .image-container {
     margin-right: 0;
+    height: 65%;
   }
 
   .restaurant-image {
     width: 100%;
-    height: 200px;
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .bottom-container {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .detail-container {
+    width: 60%;
+    padding-left: 15px;
+  }
+
+  .restaurant-name {
+    font-size: 1rem;
+  }
+
+  .restaurant-address {
+    display: block;
+  }
+
+  .star {
+    margin-right: 5px;
+    font-size: 1rem;
+  }
+
+  .select-icon-container {
+    width: 30%;
+  }
+
+  .unchecked {
+    font-size: 2.7rem;
+  }
+
+  .mobile {
+    display: none;
   }
 }
