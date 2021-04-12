@@ -7,7 +7,7 @@ export default class AppDrawer extends React.Component {
     if (drawerClosed === false) {
       return (
         <div className="app-drawer-container">
-          <div clasName="menu-container">
+          <div className="menu-container">
             <h2>Menu</h2>
             <ul>
               <li onClick={handleClick}>
