@@ -21,7 +21,7 @@ export default class SearchResults extends React.Component {
     const restaurants = this.state.restaurants;
     const divRestaruantMobile = restaurants.map(restaurant => {
       return (
-        <a key={restaurant.alias} className="restaurant-link" href={restaurant.url}>
+        <a key={restaurant.alias} className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
           <div className="restaurant one-third-column">
             <div className="image-container">
               <img className="restaurant-image" src={restaurant.image_url}></img>
