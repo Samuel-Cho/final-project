@@ -18,7 +18,8 @@ app.get('/api/search/:location/:foodType', (req, res, next) => {
   }
   client.search({
     location: location,
-    categories: foodType
+    categories: foodType,
+    limit: 21
   })
     .then(searchResults => res.json(searchResults.jsonBody))
     .catch(err => next(err));

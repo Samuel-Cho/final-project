@@ -76,8 +76,7 @@ export default class SearchForm extends React.Component {
   }
 
   render() {
-    let divItemsMobile = null;
-    divItemsMobile = foodTypeList.map(foodType => {
+    const divItemsMobile = foodTypeList.map(foodType => {
       if (foodType.id === this.state.foodType) {
         return (
           <div onClick={this.handleClick} className="food-type selected" id={foodType.id} key={foodType.id}>{foodType.text}</div>
@@ -88,8 +87,7 @@ export default class SearchForm extends React.Component {
         );
       }
     });
-    let divItemsDesktop = null;
-    divItemsDesktop = foodTypeList.map(foodType => {
+    const divItemsDesktop = foodTypeList.map(foodType => {
       if (foodType.id === this.state.foodType) {
         return (
           <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
