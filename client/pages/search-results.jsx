@@ -19,8 +19,7 @@ export default class SearchResults extends React.Component {
 
   render() {
     const restaurants = this.state.restaurants;
-    let divRestaruantMobile = null;
-    divRestaruantMobile = restaurants.map(restaurant => {
+    const divRestaruantMobile = restaurants.map(restaurant => {
       return (
         <div key={restaurant.alias} className="restaurant one-third-column">
           <div className="image-container">
@@ -40,8 +39,7 @@ export default class SearchResults extends React.Component {
         </div>
       );
     });
-    let divRestaruantDesktop = null;
-    divRestaruantDesktop = restaurants.map(restaurant => {
+    const divRestaruantDesktop = restaurants.map(restaurant => {
       return (
         <div key={restaurant.alias} className="restaurant one-third-column">
           <div className="image-container">
