@@ -9,8 +9,18 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: parseRoute(window.location.hash)
+      route: parseRoute(window.location.hash),
+      drawerClosed: true
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    if (this.state.drawerClosed === true) {
+      this.setState({ drawerClosed: false });
+    } else {
+      this.setState({ drawerClosed: true });
+    }
   }
 
   componentDidMount() {
