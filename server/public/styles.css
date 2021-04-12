@@ -133,6 +133,13 @@ header {
   overflow-y: scroll;
 }
 
+.restaurant-link {
+  text-decoration: none;
+  color: #292929;
+  cursor: pointer;
+  outline: none;
+}
+
 .restaurant {
   border-radius: 4px;
   background-color: white;
@@ -282,8 +289,11 @@ p {
   }
 
   .one-third-column {
-    height: 320px;
     width: 27%;
+  }
+
+  .restaurant {
+    height: 320px;
     display: block;
   }
 
