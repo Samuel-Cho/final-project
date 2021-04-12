@@ -43,24 +43,26 @@ export default class SearchResults extends React.Component {
     });
     const divRestaruantDesktop = restaurants.map(restaurant => {
       return (
-        <div key={restaurant.alias} className="restaurant one-third-column">
-          <div className="image-container">
-            <img className="restaurant-image" src={restaurant.image_url}></img>
-          </div>
-          <div className="bottom-container">
-            <div className="detail-container">
-              <p className="restaurant-name">{restaurant.name}</p>
-              <p className="restaurant-address">{restaurant.location.address1}</p>
-              <div className="restaurant-rating">
-                <StarRating rating={restaurant.rating} />
+        <a key={restaurant.alias} className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
+          <div className="restaurant one-third-column">
+            <div className="image-container">
+              <img className="restaurant-image" src={restaurant.image_url}></img>
+            </div>
+            <div className="bottom-container">
+              <div className="detail-container">
+                <p className="restaurant-name">{restaurant.name}</p>
+                <p className="restaurant-address">{restaurant.location.address1}</p>
+                <div className="restaurant-rating">
+                  <StarRating rating={restaurant.rating} />
+                </div>
+                <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
               </div>
-              <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
-            </div>
-            <div className="select-icon-container">
-              <i className="far fa-check-circle unchecked"></i>
+              <div className="select-icon-container">
+                <i className="far fa-check-circle unchecked"></i>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       );
     });
     return (
