@@ -289,8 +289,11 @@ p {
   }
 
   .one-third-column {
-    height: 320px;
     width: 27%;
+  }
+
+  .restaurant {
+    height: 320px;
     display: block;
   }
 

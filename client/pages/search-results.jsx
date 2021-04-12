@@ -43,8 +43,8 @@ export default class SearchResults extends React.Component {
     });
     const divRestaruantDesktop = restaurants.map(restaurant => {
       return (
-        <a key={restaurant.alias} className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
-          <div className="restaurant one-third-column">
+        <a key={restaurant.alias} className="restaurant-link one-third-column" href={restaurant.url} target="_blank" rel="noreferrer">
+          <div className="restaurant">
             <div className="image-container">
               <img className="restaurant-image" src={restaurant.image_url}></img>
             </div>
