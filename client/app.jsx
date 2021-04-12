@@ -4,6 +4,7 @@ import Header from './components/header';
 import { parseRoute, AppContext } from './lib';
 import SearchResults from './pages/search-results';
 import PageWrapper from './components/page-wrapper';
+import AppDrawer from './components/app-drawer';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
         <>
           <PageWrapper path={this.state.route.path}>
+            <AppDrawer />
             <Header />
             {this.renderPage()}
           </PageWrapper>

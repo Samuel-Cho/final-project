@@ -1,12 +1,12 @@
 import React from 'react';
-import AppContext from '../lib';
+import { AppContext } from '../lib';
 
 export default class AppDrawer extends React.Component {
   render() {
     const { drawerClosed, handleClick } = this.context;
-    if (drawerClosed === true) {
+    if (drawerClosed === false) {
       return (
-        <div className="app-drawer-container hidden">
+        <div className="app-drawer-container">
           <div clasName="menu-container">
             <h2>Menu</h2>
             <ul>
@@ -24,6 +24,8 @@ export default class AppDrawer extends React.Component {
           <div className="modal" onClick={handleClick}></div>
         </div>
       );
+    } else {
+      return null;
     }
   }
 }
