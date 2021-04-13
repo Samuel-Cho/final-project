@@ -217,6 +217,7 @@ p {
   position: fixed;
   padding-left: 30px;
   padding-top: 10px;
+  font-family: 'Spectral', serif;
 }
 
 ul {
@@ -227,13 +228,16 @@ ul {
 li {
   margin-bottom: 20px;
   font-size: 1.2rem;
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  align-items: center;
 }
 
 .search-icon::before,
 .list-icon::before,
 .check-circle-icon::before {
   padding-right: 20px;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
 }
 
 .modal {
