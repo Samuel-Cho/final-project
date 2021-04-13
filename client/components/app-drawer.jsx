@@ -2,6 +2,16 @@ import React from 'react';
 import { AppContext } from '../lib';
 
 export default class AppDrawer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      previousSearchParams: {
+        foodType: null,
+        location: null
+      }
+    };
+  }
+
   render() {
     const { drawerClosed, handleClick } = this.context;
     if (drawerClosed === false) {
