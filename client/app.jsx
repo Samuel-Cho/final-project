@@ -47,9 +47,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { drawerClosed } = this.state;
+    const { route, drawerClosed } = this.state;
     const { handleClick } = this;
-    const contextValue = { drawerClosed, handleClick };
+    const contextValue = { route, drawerClosed, handleClick };
     return (
       <AppContext.Provider value={contextValue}>
         <>
