@@ -7,6 +7,7 @@ export default class AppDrawer extends React.Component {
     if (drawerClosed === false) {
       return (
         <div className="app-drawer-container">
+          <div className="modal" onClick={handleClick}></div>
           <div className="menu-container">
             <h2>Menu</h2>
             <ul>
@@ -21,7 +22,6 @@ export default class AppDrawer extends React.Component {
               </li>
             </ul>
           </div>
-          <div className="modal" onClick={handleClick}></div>
         </div>
       );
     } else {
