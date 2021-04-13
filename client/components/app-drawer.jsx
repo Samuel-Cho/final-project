@@ -13,7 +13,7 @@ export default class AppDrawer extends React.Component {
             <ul>
               <li onClick={handleClick}>
                 <i className="fas fa-search search-icon"></i>
-                <p>Search Restaruant</p>
+                <p>Search Restaurant</p>
               </li>
               <li onClick={handleClick}>
                 <i className="fas fa-list list-icon"></i>

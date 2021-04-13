@@ -32,7 +32,7 @@ export default class App extends React.Component {
   }
 
   renderPage() {
-    if (this.state.route.path === '') {
+    if (this.state.route.path === '' || this.state.route.path === 'search') {
       return <Home />;
     } else if (this.state.route.path === 'searchResults') {
       return (
