@@ -54,9 +54,7 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
         <>
           <PageWrapper path={this.state.route.path}>
-            <AppDrawer
-              location={this.state.route.params.get('location')}
-              foodType={this.state.route.params.get('foodType')} />
+            <AppDrawer />
             <Header />
             {this.renderPage()}
           </PageWrapper>
