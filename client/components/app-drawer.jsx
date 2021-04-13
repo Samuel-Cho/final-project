@@ -12,12 +12,12 @@ export default class AppDrawer extends React.Component {
             <h2>Menu</h2>
             <ul>
               <li onClick={handleClick}>
-                <i className="fas fa-search search-icon"></i>
-                <p>Search Restaurant</p>
+                <i className="fas fa-search search-icon search"></i>
+                <p className="search">Search Restaurant</p>
               </li>
               <li onClick={handleClick}>
-                <i className="fas fa-list list-icon"></i>
-                <p>Restaurant List</p>
+                <i className="fas fa-list list-icon searchResults"></i>
+                <p className="searchResults">Restaurant List</p>
               </li>
               <li onClick={handleClick}>
                 <i className="fas fa-check-circle check-circle-icon"></i>
