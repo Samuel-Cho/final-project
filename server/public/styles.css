@@ -119,13 +119,6 @@ header {
   padding: 10px 30px;
 }
 
-.location-search:hover,
-.food-type:hover,
-.search-button:hover,
-.drawer:hover {
-  cursor: pointer;
-}
-
 .restaurant-list-container {
   margin: 40px 0 40px 0;
   padding: 0 40px 0 40px;
@@ -227,15 +220,15 @@ ul {
 
 li {
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
 }
 
-.search-icon::before,
-.list-icon::before,
-.check-circle-icon::before {
+.search-icon,
+.list-icon,
+.check-circle-icon {
   padding-right: 20px;
   font-size: 1.7rem;
 }
@@ -247,6 +240,15 @@ li {
   position: fixed;
   top: 0;
   right: 0;
+}
+
+.location-search:hover,
+.food-type:hover,
+.search-button:hover,
+.drawer:hover,
+.modal:hover,
+li:hover {
+  cursor: pointer;
 }
 
 .desktop {
@@ -386,6 +388,26 @@ li {
 
   .unchecked {
     font-size: 2.7rem;
+  }
+
+  .menu-container {
+    width: 280px;
+    padding-left: 40px;
+  }
+
+  ul {
+    margin-top: 30px;
+  }
+
+  li {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .search-icon,
+  .list-icon,
+  .check-circle-icon {
+    font-size: 1.8rem;
   }
 
   .mobile {
