@@ -226,11 +226,19 @@ li {
   align-items: center;
 }
 
+.restaurant-list {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #292929;
+}
+
 .search-icon,
 .list-icon,
 .check-circle-icon {
   padding-right: 20px;
   font-size: 1.7rem;
+  color: #142850;
 }
 
 .modal {

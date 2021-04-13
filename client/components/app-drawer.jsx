@@ -41,9 +41,9 @@ export default class AppDrawer extends React.Component {
                 <p className="search">Search Restaurant</p>
               </li>
               <li>
-                <a onClick={handleClick} href={`#searchResults?location=${location}&foodType=${foodType}`}>
-                  <i className="fas fa-list list-icon searchResults"></i>
-                  <p className="searchResults">Restaurant List</p>
+                <a className="restaurant-list" onClick={handleClick} href={`#searchResults?location=${location}&foodType=${foodType}`}>
+                  <i className="fas fa-list list-icon"></i>
+                  <p>Restaurant List</p>
                 </a>
               </li>
               <li onClick={handleClick}>
