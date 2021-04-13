@@ -1,5 +1,6 @@
 import React from 'react';
 import StarRating from '../components/star-rating';
+import { AppContext } from '../lib';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -77,3 +78,5 @@ export default class SearchResults extends React.Component {
     );
   }
 }
+
+SearchResults.contextType = AppContext;
