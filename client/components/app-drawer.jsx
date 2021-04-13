@@ -7,7 +7,7 @@ export default class AppDrawer extends React.Component {
     this.state = {
       previousSearchParams: {
         foodType: null,
-        location: null
+        location: 'orange county, ca'
       }
     };
   }
