@@ -16,7 +16,10 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(event) {
+    if (event.target.className.split(' ').includes('search')) {
+      window.location.hash = 'search';
+    }
     if (this.state.drawerClosed === true) {
       this.setState({ drawerClosed: false });
     } else {

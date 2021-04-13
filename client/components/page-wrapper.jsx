@@ -5,7 +5,9 @@ export default function PageWrapper(props) {
     ? 'bg-pattens-blue'
     : props.path === ''
       ? 'bg-white'
-      : 'bg-venice-blue';
+      : props.path === 'search'
+        ? 'bg-white'
+        : 'bg-venice-blue';
   return (
     <div className={`background ${background}`}>
       {props.children}
