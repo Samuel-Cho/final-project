@@ -16,7 +16,10 @@ export default class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(event) {
+    if (event.target.className.split(' ').includes('search')) {
+      window.location.hash = 'search';
+    }
     if (this.state.drawerClosed === true) {
       this.setState({ drawerClosed: false });
     } else {
@@ -32,7 +35,7 @@ export default class App extends React.Component {
   }
 
   renderPage() {
-    if (this.state.route.path === '') {
+    if (this.state.route.path === '' || this.state.route.path === 'search') {
       return <Home />;
     } else if (this.state.route.path === 'searchResults') {
       return (
@@ -44,9 +47,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { drawerClosed } = this.state;
+    const { route, drawerClosed } = this.state;
     const { handleClick } = this;
-    const contextValue = { drawerClosed, handleClick };
+    const contextValue = { route, drawerClosed, handleClick };
     return (
       <AppContext.Provider value={contextValue}>
         <>
