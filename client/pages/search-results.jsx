@@ -13,7 +13,11 @@ export default class SearchResults extends React.Component {
   }
 
   handleClick(event) {
-    event.target.className = 'fas fa-check-circle checked';
+    if (event.target.className === 'far fa-check-circle unchecked') {
+      event.target.className = 'fas fa-check-circle checked';
+    } else {
+      event.target.className = 'far fa-check-circle unchecked';
+    }
   }
 
   componentDidMount() {
@@ -26,8 +30,8 @@ export default class SearchResults extends React.Component {
     const restaurants = this.state.restaurants;
     const divRestaruantMobile = restaurants.map(restaurant => {
       return (
-        <a key={restaurant.alias} className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
-          <div className="restaurant one-third-column">
+        <div key={restaurant.alias} className="restaurant one-third-column">
+          <a className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
             <div className="image-container">
               <img className="restaurant-image" src={restaurant.image_url}></img>
             </div>
@@ -39,11 +43,12 @@ export default class SearchResults extends React.Component {
               </div>
               <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
             </div>
-            <div className="select-icon-container">
-              <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
-            </div>
+          </a>
+          <div className="select-icon-container">
+            <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
           </div>
-        </a>
+        </div>
+
       );
     });
     const divRestaruantDesktop = restaurants.map(restaurant => {

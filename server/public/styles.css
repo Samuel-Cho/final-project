@@ -131,6 +131,7 @@ header {
   color: #292929;
   cursor: pointer;
   outline: none;
+  display: flex;
 }
 
 .restaurant {
