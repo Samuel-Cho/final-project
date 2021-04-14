@@ -1,16 +1,23 @@
 import React from 'react';
 
 export default function PageWrapper(props) {
-  const background = props.path === 'searchResults'
-    ? 'bg-pattens-blue'
-    : props.path === ''
-      ? 'bg-white'
-      : props.path === 'search'
-        ? 'bg-white'
-        : 'bg-venice-blue';
-  return (
-    <div className={`background ${background}`}>
-      {props.children}
-    </div>
-  );
+  if (props.path === 'searchResults') {
+    return (
+      <div className="background bg-pattens-blue">
+        {props.children}
+      </div>
+    );
+  } else if (props.path === '' || props.path === 'search') {
+    return (
+      <div className="background bg-white">
+        {props.children}
+      </div>
+    );
+  } else {
+    return (
+      <div className="background bg-venice-blue">
+        {props.children}
+      </div>
+    );
+  }
 }
