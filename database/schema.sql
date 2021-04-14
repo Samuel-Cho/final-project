@@ -14,6 +14,6 @@ create table "public"."restaurants" (
   "name"             text    not null,
   "address1"         text    not null,
   "rating"           float   not null,
-  "reviewCount"      text    not null,
+  "reviewCount"      integer not null,
   primary key ("restaurantId")
 )
