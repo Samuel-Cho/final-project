@@ -53,12 +53,14 @@ export default class SearchResults extends React.Component {
     });
     const divRestaruantDesktop = restaurants.map(restaurant => {
       return (
-        <a key={restaurant.alias} className="restaurant-link one-third-column" href={restaurant.url} target="_blank" rel="noreferrer">
-          <div className="restaurant">
-            <div className="image-container">
+        <div key={restaurant.alias} className="restaurant one-third-column">
+          <div className="image-container">
+            <a href={restaurant.url} target="_blank" rel="noreferrer">
               <img className="restaurant-image" src={restaurant.image_url}></img>
-            </div>
-            <div className="bottom-container">
+            </a>
+          </div>
+          <div className="bottom-container">
+            <a className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
               <div className="detail-container">
                 <p className="restaurant-name">{restaurant.name}</p>
                 <p className="restaurant-address">{restaurant.location.address1}</p>
@@ -67,12 +69,12 @@ export default class SearchResults extends React.Component {
                 </div>
                 <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
               </div>
-              <div className="select-icon-container">
-                <i className="far fa-check-circle unchecked"></i>
-              </div>
+            </a>
+            <div className="select-icon-container">
+              <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
             </div>
           </div>
-        </a>
+        </div>
       );
     });
     return (
