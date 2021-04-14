@@ -9,6 +9,11 @@ export default class SearchResults extends React.Component {
       foodType: props.foodType,
       restaurants: []
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    event.target.className = 'fas fa-check-circle checked';
   }
 
   componentDidMount() {
@@ -35,7 +40,7 @@ export default class SearchResults extends React.Component {
               <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
             </div>
             <div className="select-icon-container">
-              <i className="far fa-check-circle unchecked"></i>
+              <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
             </div>
           </div>
         </a>
