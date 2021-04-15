@@ -4,7 +4,7 @@ export default class CheckIcon extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // restaurantsDbAliases: [],
+      restaurantsDbAliases: props.restaurantsDbAliases,
       aliasCheck: props.alias
     };
     this.handleClick = this.handleClick.bind(this);
@@ -17,12 +17,6 @@ export default class CheckIcon extends React.Component {
       event.target.className = 'far fa-check-circle unchecked';
     }
   }
-
-  // componentDidMount() {
-  //   fetch('/api/randomizerList')
-  //     .then(res => res.json())
-  //     .then(aliases => this.setState({ restaurantsDbAliases: aliases }));
-  // }
 
   render() {
     // console.log(this.state);

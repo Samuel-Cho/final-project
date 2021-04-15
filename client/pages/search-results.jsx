@@ -32,7 +32,7 @@ export default class SearchResults extends React.Component {
   }
 
   render() {
-    // console.log(this.state.restaurantsDbAliases);
+    // console.log(this.state);
     const restaurants = this.state.restaurants;
     const divRestaruantMobile = restaurants.map(restaurant => {
       return (
@@ -51,7 +51,7 @@ export default class SearchResults extends React.Component {
             </div>
           </a>
           <div className="select-icon-container">
-            <CheckIcon alias={restaurant.alias} />
+            <CheckIcon alias={restaurant.alias} restaurantsDbAliases={this.state.restaurantsDbAliases} />
           </div>
         </div>
 

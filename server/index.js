@@ -41,7 +41,7 @@ app.get('/api/randomizerList', (req, res, next) => {
   `;
   db.query(sql)
     .then(result => {
-      res.json(result.rows[0]);
+      res.json(result.rows);
     })
     .catch(err => next(err));
 });
