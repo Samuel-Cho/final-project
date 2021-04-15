@@ -154,6 +154,10 @@ header {
   border-radius: 4px 0 0 4px;
 }
 
+.bottom-container {
+  display: flex;
+}
+
 .detail-container {
   font-size: 0.8rem;
   width: 150px;
@@ -373,7 +377,6 @@ li:hover,
   .bottom-container {
     height: 35%;
     width: 100%;
-    display: flex;
     justify-content: space-around;
   }
 
