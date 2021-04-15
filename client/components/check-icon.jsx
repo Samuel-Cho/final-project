@@ -13,13 +13,14 @@ export default class CheckIcon extends React.Component {
         location: props.restaurant.location,
         rating: props.restaurant.rating,
         reviewCount: props.restaurant.review_count
-      }
+      },
+      isSelected: false
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    if (event.target.className === 'far fa-check-circle unchecked') {
+    if (this.state.isSelected === false) {
       const reqPost = {
         method: 'POST',
         headers: {
@@ -30,18 +31,26 @@ export default class CheckIcon extends React.Component {
       fetch('/api/save', reqPost)
         .then(res => res.json())
         .then(results => {
-          event.target.className = 'fas fa-check-circle checked';
+          this.setState({ isSelected: true });
         });
     } else {
-      event.target.className = 'far fa-check-circle unchecked';
+      this.setState({ isSelected: false });
+    }
+  }
+
+  componentDidMount() {
+    const aliasCheck = this.state.restaurant.alias;
+    const { restaurantsDbAliases: aliases } = this.state;
+    const alias = aliases.filter(aliasObject => aliasObject.alias === aliasCheck);
+    if (alias.length !== 0) {
+      this.setState({ isSelected: true });
+    } else {
+      this.setState({ isSelected: false });
     }
   }
 
   render() {
-    const aliasCheck = this.state.restaurant.alias;
-    const { restaurantsDbAliases: aliases } = this.state;
-    const alias = aliases.filter(aliasObject => aliasObject.alias === aliasCheck);
-    if (alias.length === 0) {
+    if (this.state.isSelected === false) {
       return (
         <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
       );
