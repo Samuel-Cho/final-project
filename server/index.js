@@ -5,6 +5,14 @@ const errorMiddleware = require('./error-middleware');
 const ClientError = require('./client-error');
 const yelp = require('yelp-fusion');
 const client = yelp.client(process.env.YELP_API_KEY);
+const pg = require('pg');
+
+const db = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const app = express();
 
@@ -23,6 +31,18 @@ app.get('/api/search/:location/:foodType', (req, res, next) => {
     open_now: true
   })
     .then(searchResults => res.json(searchResults.jsonBody))
+    .catch(err => next(err));
+});
+
+app.get('/api/randomizerList', (req, res, next) => {
+  const sql = `
+    select "alias"
+      from "restaurants"
+  `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows[0]);
+    })
     .catch(err => next(err));
 });
 
