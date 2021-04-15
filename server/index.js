@@ -5,10 +5,22 @@ const errorMiddleware = require('./error-middleware');
 const ClientError = require('./client-error');
 const yelp = require('yelp-fusion');
 const client = yelp.client(process.env.YELP_API_KEY);
+const pg = require('pg');
+
+const db = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const app = express();
 
 app.use(staticMiddleware);
+
+const jsonMiddleware = express.json();
+
+app.use(jsonMiddleware);
 
 app.get('/api/search/:location/:foodType', (req, res, next) => {
   const location = req.params.location;
@@ -23,6 +35,36 @@ app.get('/api/search/:location/:foodType', (req, res, next) => {
     open_now: true
   })
     .then(searchResults => res.json(searchResults.jsonBody))
+    .catch(err => next(err));
+});
+
+app.get('/api/randomizerList', (req, res, next) => {
+  const sql = `
+    select "alias"
+      from "restaurants"
+  `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/save', (req, res, next) => {
+  const { alias, url, imageUrl, name, location: { address1 }, rating, reviewCount } = req.body;
+  if (!alias || !url || !imageUrl || !name || !address1 || !rating || !reviewCount) {
+    throw new ClientError(400, 'alias, url, image_url, name, address1, rating, and review_count are required fields');
+  }
+  const sql = `
+    insert into "restaurants" ("alias", "url", "imageUrl", "name", "address1", "rating", "reviewCount")
+    values ($1, $2, $3, $4, $5, $6, $7)
+    returning *;
+  `;
+  const params = [alias, url, imageUrl, name, address1, rating, reviewCount];
+  db.query(sql, params)
+    .then(result => {
+      res.status(201).json(result.rows);
+    })
     .catch(err => next(err));
 });
 

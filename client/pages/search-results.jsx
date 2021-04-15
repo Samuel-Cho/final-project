@@ -1,5 +1,6 @@
 import React from 'react';
 import StarRating from '../components/star-rating';
+import CheckIcon from '../components/check-icon';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -7,7 +8,8 @@ export default class SearchResults extends React.Component {
     this.state = {
       location: props.location,
       foodType: props.foodType,
-      restaurants: []
+      restaurants: [],
+      restaurantsDbAliases: []
     };
   }
 
@@ -15,40 +17,23 @@ export default class SearchResults extends React.Component {
     fetch(`/api/search/${this.state.location}/${this.state.foodType}`)
       .then(res => res.json())
       .then(businesses => this.setState({ restaurants: businesses.businesses }));
+    fetch('/api/randomizerList')
+      .then(res => res.json())
+      .then(aliases => this.setState({ restaurantsDbAliases: aliases }));
   }
 
   render() {
     const restaurants = this.state.restaurants;
-    const divRestaruantMobile = restaurants.map(restaurant => {
+    const divRestaruants = restaurants.map(restaurant => {
       return (
-        <a key={restaurant.alias} className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
-          <div className="restaurant one-third-column">
-            <div className="image-container">
+        <div key={restaurant.alias} className="restaurant one-third-column">
+          <div className="image-container">
+            <a href={restaurant.url} target="_blank" rel="noreferrer">
               <img className="restaurant-image" src={restaurant.image_url}></img>
-            </div>
-            <div className="detail-container">
-              <p className="restaurant-name">{restaurant.name}</p>
-              <p className="restaurant-address">{restaurant.location.address1}</p>
-              <div className="restaurant-rating">
-                <StarRating rating={restaurant.rating} />
-              </div>
-              <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
-            </div>
-            <div className="select-icon-container">
-              <i className="far fa-check-circle unchecked"></i>
-            </div>
+            </a>
           </div>
-        </a>
-      );
-    });
-    const divRestaruantDesktop = restaurants.map(restaurant => {
-      return (
-        <a key={restaurant.alias} className="restaurant-link one-third-column" href={restaurant.url} target="_blank" rel="noreferrer">
-          <div className="restaurant">
-            <div className="image-container">
-              <img className="restaurant-image" src={restaurant.image_url}></img>
-            </div>
-            <div className="bottom-container">
+          <div className="bottom-container">
+            <a className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
               <div className="detail-container">
                 <p className="restaurant-name">{restaurant.name}</p>
                 <p className="restaurant-address">{restaurant.location.address1}</p>
@@ -57,23 +42,18 @@ export default class SearchResults extends React.Component {
                 </div>
                 <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
               </div>
-              <div className="select-icon-container">
-                <i className="far fa-check-circle unchecked"></i>
-              </div>
+            </a>
+            <div className="select-icon-container">
+              <CheckIcon restaurant={restaurant} restaurantsDbAliases={this.state.restaurantsDbAliases} />
             </div>
           </div>
-        </a>
+        </div>
       );
     });
     return (
-      <>
-        <div className="restaurant-list-container mobile">
-          {divRestaruantMobile}
-        </div>
-        <div className="restaurant-list-container desktop">
-          {divRestaruantDesktop}
-        </div>
-      </>
+      <div className="restaurant-list-container ">
+        {divRestaruants}
+      </div>
     );
   }
 }
