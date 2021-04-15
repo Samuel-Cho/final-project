@@ -5,7 +5,7 @@ export default class CheckIcon extends React.Component {
     super(props);
     this.state = {
       restaurantsDbAliases: props.restaurantsDbAliases,
-      aliasCheck: props.alias
+      restaurant: props.restaurant
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -20,9 +20,10 @@ export default class CheckIcon extends React.Component {
 
   render() {
     // console.log(this.state);
+    const aliasCheck = this.state.restaurant.alias;
     const { restaurantsDbAliases: aliases } = this.state;
-    const alias = aliases.filter(alias => alias === this.state.aliasCheck);
-    // console.log(alias);
+    const alias = aliases.filter(alias => alias === aliasCheck);
+    // console.log(aliasCheck);
     if (alias.length === 0) {
       return (
         <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
