@@ -11,16 +11,7 @@ export default class SearchResults extends React.Component {
       restaurants: [],
       restaurantsDbAliases: []
     };
-    // this.handleClick = this.handleClick.bind(this);
   }
-
-  // handleClick(event) {
-  //   if (event.target.className === 'far fa-check-circle unchecked') {
-  //     event.target.className = 'fas fa-check-circle checked';
-  //   } else {
-  //     event.target.className = 'far fa-check-circle unchecked';
-  //   }
-  // }
 
   componentDidMount() {
     fetch(`/api/search/${this.state.location}/${this.state.foodType}`)
@@ -32,7 +23,6 @@ export default class SearchResults extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
     const restaurants = this.state.restaurants;
     const divRestaruantMobile = restaurants.map(restaurant => {
       return (
@@ -77,7 +67,7 @@ export default class SearchResults extends React.Component {
               </div>
             </a>
             <div className="select-icon-container">
-              <i onClick={this.handleClick} className="far fa-check-circle unchecked"></i>
+              <CheckIcon restaurant={restaurant} restaurantsDbAliases={this.state.restaurantsDbAliases} />
             </div>
           </div>
         </div>

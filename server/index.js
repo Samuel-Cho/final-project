@@ -18,6 +18,10 @@ const app = express();
 
 app.use(staticMiddleware);
 
+const jsonMiddleware = express.json();
+
+app.use(jsonMiddleware);
+
 app.get('/api/search/:location/:foodType', (req, res, next) => {
   const location = req.params.location;
   const foodType = req.params.foodType;
@@ -42,6 +46,24 @@ app.get('/api/randomizerList', (req, res, next) => {
   db.query(sql)
     .then(result => {
       res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/save', (req, res, next) => {
+  const { alias, url, imageUrl, name, location: { address1 }, rating, reviewCount } = req.body;
+  if (!alias || !url || !imageUrl || !name || !address1 || !rating || !reviewCount) {
+    throw new ClientError(400, 'alias, url, image_url, name, address1, rating, and review_count are required fields');
+  }
+  const sql = `
+    insert into "restaurants" ("alias", "url", "imageUrl", "name", "address1", "rating", "reviewCount")
+    values ($1, $2, $3, $4, $5, $6, $7)
+    returning *;
+  `;
+  const params = [alias, url, imageUrl, name, address1, rating, reviewCount];
+  db.query(sql, params)
+    .then(result => {
+      res.status(201).json(result.rows);
     })
     .catch(err => next(err));
 });
