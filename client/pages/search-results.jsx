@@ -24,7 +24,7 @@ export default class SearchResults extends React.Component {
 
   render() {
     const restaurants = this.state.restaurants;
-    const divRestaruant = restaurants.map(restaurant => {
+    const divRestaruants = restaurants.map(restaurant => {
       return (
         <div key={restaurant.alias} className="restaurant one-third-column">
           <div className="image-container">
@@ -52,7 +52,7 @@ export default class SearchResults extends React.Component {
     });
     return (
       <div className="restaurant-list-container ">
-        {divRestaruant}
+        {divRestaruants}
       </div>
     );
   }
