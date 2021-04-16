@@ -47,8 +47,8 @@ export default class AppDrawer extends React.Component {
                 </a>
               </li>
               <li onClick={handleClick}>
-                <i className="fas fa-check-circle check-circle-icon"></i>
-                <p>Randomize List</p>
+                <i className="fas fa-check-circle check-circle-icon randomize"></i>
+                <p className="randomize">Randomize List</p>
               </li>
             </ul>
           </div>
