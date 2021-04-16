@@ -246,7 +246,9 @@ li {
   align-items: center;
 }
 
-.restaurant-list {
+.restaurant-list,
+.search-restaurant,
+.randomize-list {
   display: flex;
   align-items: center;
   text-decoration: none;

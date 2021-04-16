@@ -36,9 +36,11 @@ export default class AppDrawer extends React.Component {
           <div className="menu-container">
             <h2>Menu</h2>
             <ul>
-              <li onClick={handleClick}>
-                <i className="fas fa-search search-icon search"></i>
-                <p className="search">Search Restaurant</p>
+              <li>
+                <a className="search-restaurant" onClick={handleClick} href="#search">
+                  <i className="fas fa-search search-icon"></i>
+                  <p>Search Restaurant</p>
+                </a>
               </li>
               <li>
                 <a className="restaurant-list" onClick={handleClick} href={`#searchResults?location=${location}&foodType=${foodType}`}>
@@ -46,9 +48,11 @@ export default class AppDrawer extends React.Component {
                   <p>Restaurant List</p>
                 </a>
               </li>
-              <li onClick={handleClick}>
-                <i className="fas fa-check-circle check-circle-icon randomize"></i>
-                <p className="randomize">Randomize List</p>
+              <li>
+                <a className="randomize-list" onClick={handleClick} href="#randomize">
+                  <i className="fas fa-check-circle check-circle-icon"></i>
+                  <p>Randomize List</p>
+                </a>
               </li>
             </ul>
           </div>

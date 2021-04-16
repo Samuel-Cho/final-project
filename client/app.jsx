@@ -18,11 +18,6 @@ export default class App extends React.Component {
   }
 
   handleClick(event) {
-    if (event.target.className.split(' ').includes('search')) {
-      window.location.hash = 'search';
-    } else if (event.target.className.split(' ').includes('randomize')) {
-      window.location.hash = 'randomize';
-    }
     if (this.state.drawerClosed === true) {
       this.setState({ drawerClosed: false });
     } else {
