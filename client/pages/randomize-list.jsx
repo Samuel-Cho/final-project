@@ -10,6 +10,14 @@ export default class RandomizeList extends React.Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch('/api/randomizerListAll')
+  //     .then(res => res.json(res))
+  //     .then(results => {
+  //       this.setState({ restaurants: results });
+  //     });
+  // }
+
   render() {
     const restaurants = this.state.restaurants;
     const divRestaruants = restaurants.map(restaurant => {
@@ -39,7 +47,7 @@ export default class RandomizeList extends React.Component {
       );
     });
     return (
-      <div className="restaurant-list-container">
+      <div className="container">
         <div className="randomize-list-container">
           {divRestaruants}
         </div>
