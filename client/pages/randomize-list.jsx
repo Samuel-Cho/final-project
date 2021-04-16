@@ -6,17 +6,14 @@ export default class RandomizeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantDbAliases: [],
+      restaurantsDbAliases: [],
       restaurants: []
     };
   }
 
   componentDidMount() {
-    fetch('/api/randomizerList')
-      .then(res => res.json())
-      .then(aliases => this.setState({ restaurantsDbAliases: aliases }));
     fetch('/api/randomizerListAll')
-      .then(res => res.json(res))
+      .then(res => res.json())
       .then(results => {
         const restaurantsConverted = results.map(restaurant => {
           const restaurantConverted = {
@@ -34,6 +31,9 @@ export default class RandomizeList extends React.Component {
         });
         this.setState({ restaurants: restaurantsConverted });
       });
+    fetch('/api/randomizerList')
+      .then(res => res.json())
+      .then(aliases => this.setState({ restaurantsDbAliases: aliases }));
   }
 
   render() {
