@@ -64,7 +64,6 @@ export default class RandomizeList extends React.Component {
         </div>
       );
     });
-    // if (this.state.restaurants.length !== 0) {
     return (
         <div className="container">
           <div className="randomize-list-container">
@@ -75,8 +74,5 @@ export default class RandomizeList extends React.Component {
           </div>
         </div>
     );
-    // } else {
-    //   return null;
-    // }
   }
 }
