@@ -5,6 +5,7 @@ import { parseRoute, AppContext } from './lib';
 import SearchResults from './pages/search-results';
 import PageWrapper from './components/page-wrapper';
 import AppDrawer from './components/app-drawer';
+import RandomizeList from './pages/randomize-list';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,9 +18,6 @@ export default class App extends React.Component {
   }
 
   handleClick(event) {
-    if (event.target.className.split(' ').includes('search')) {
-      window.location.hash = 'search';
-    }
     if (this.state.drawerClosed === true) {
       this.setState({ drawerClosed: false });
     } else {
@@ -43,6 +41,8 @@ export default class App extends React.Component {
           location={this.state.route.params.get('location')}
           foodType={this.state.route.params.get('foodType')} />
       );
+    } else if (this.state.route.path === 'randomize') {
+      return <RandomizeList />;
     }
   }
 
