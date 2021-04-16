@@ -32,7 +32,7 @@ export default class RandomizeList extends React.Component {
             <a className="restaurant-link" href={restaurant.url} target="_blank" rel="noreferrer">
               <div className="detail-container">
                 <p className="restaurant-name">{restaurant.name}</p>
-                <p className="restaurant-address">{restaurant.location.address1}</p>
+                <p className="restaurant-address">{restaurant.address1}</p>
                 <div className="restaurant-rating">
                   <StarRating rating={restaurant.rating} />
                 </div>

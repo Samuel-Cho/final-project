@@ -50,6 +50,18 @@ app.get('/api/randomizerList', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/randomizerListAll', (req, res, next) => {
+  const sql = `
+    select *
+      from "restaurants";
+  `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
 app.post('/api/save', (req, res, next) => {
   const { alias, url, imageUrl, name, location: { address1 }, rating, reviewCount } = req.body;
   if (!alias || !url || !imageUrl || !name || !address1 || !rating || !reviewCount) {
