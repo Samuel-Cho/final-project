@@ -110,19 +110,28 @@ header {
   text-align: center;
 }
 
-.search-button {
+.search-button,
+.randomize-button {
   border: none;
   border-radius: 15px;
-  background: #142850;
   color: white;
   font-size: 18px;
   padding: 10px 30px;
 }
 
-.restaurant-list-container {
+.search-button {
+  background: #142850;
+}
+
+.restaurant-list-container,
+.container {
   margin: 40px 0 40px 0;
   padding: 0 40px 0 40px;
   height: 78%;
+}
+
+.restaurant-list-container,
+.randomize-list-container {
   overflow-y: scroll;
 }
 
@@ -134,13 +143,17 @@ header {
   display: flex;
 }
 
-.restaurant {
+.restaurant,
+.restaurant-randomize {
   border-radius: 4px;
   background-color: white;
   margin-bottom: 35px;
   display: flex;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   height: 80px;
+}
+
+.restaurant {
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .image-container {
@@ -266,6 +279,25 @@ li:hover,
 .unchecked,
 .checked {
   cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.randomize-list-container {
+  height: 88%;
+}
+
+.restaurant-randomize {
+  filter: drop-shadow(0 4px 4px #00909e);
+}
+
+.randomize-button {
+  background-color: #00909e;
 }
 
 .desktop {

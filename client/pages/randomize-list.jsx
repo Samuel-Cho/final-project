@@ -29,11 +29,11 @@ export default class RandomizeList extends React.Component {
           };
           return restaurantConverted;
         });
-        this.setState({ restaurants: restaurantsConverted });
+        const restaurantAliases = results.map(restaurant => {
+          return { alias: restaurant.alias };
+        });
+        this.setState({ restaurantsDbAliases: restaurantAliases, restaurants: restaurantsConverted });
       });
-    fetch('/api/randomizerList')
-      .then(res => res.json())
-      .then(aliases => this.setState({ restaurantsDbAliases: aliases }));
   }
 
   render() {
