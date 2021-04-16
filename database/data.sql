@@ -7,7 +7,7 @@ insert into "restaurants" (
   "rating",
   "reviewCount"
 ) values (
-  'example restaurant',
+  'example-restaurant',
   'http://example.com/',
   'https://phcdn.b-cdn.net/wp-content/uploads/2017/08/example.com-domain.png',
   'Example Restaurant',

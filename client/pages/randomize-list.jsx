@@ -9,6 +9,11 @@ export default class RandomizeList extends React.Component {
       restaurantsDbAliases: [],
       restaurants: []
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    return null;
   }
 
   componentDidMount() {
@@ -57,7 +62,7 @@ export default class RandomizeList extends React.Component {
                 <p className="restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
               </div>
             </a>
-            <div className="select-icon-container">
+            <div onClick={this.handleClick} className="select-icon-container">
               <CheckIcon restaurant={restaurant} restaurantsDbAliases={this.state.restaurantsDbAliases} />
             </div>
           </div>

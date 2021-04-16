@@ -67,7 +67,7 @@ export default class CheckIcon extends React.Component {
       );
     } else {
       return (
-        <i onClick={this.handleClick} className="fas fa-check-circle checked"></i>
+        <i onClick={this.handleClick} className={`fas fa-check-circle checked ${this.state.restaurant.alias}`}></i>
       );
     }
   }
