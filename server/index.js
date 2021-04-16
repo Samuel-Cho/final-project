@@ -68,6 +68,27 @@ app.post('/api/save', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.delete('/api/delete', (req, res, next) => {
+  const { alias } = req.body;
+  if (!alias) {
+    throw new ClientError(400, 'alias is a required field');
+  }
+  const sql = `
+    delete from "restaurants"
+     where "alias" = $1
+    returning *;
+  `;
+  const params = [alias];
+  db.query(sql, params)
+    .then(result => {
+      if (!result.rows[0]) {
+        throw new ClientError(404, `cannot find restaurant with alias ${alias}`);
+      }
+      res.status(200).json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

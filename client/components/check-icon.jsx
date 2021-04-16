@@ -34,7 +34,18 @@ export default class CheckIcon extends React.Component {
           this.setState({ isSelected: true });
         });
     } else {
-      this.setState({ isSelected: false });
+      const reqDelete = {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state.restaurant)
+      };
+      fetch('/api/delete', reqDelete)
+        .then(res => res.json())
+        .then(results => {
+          this.setState({ isSelected: false });
+        });
     }
   }
 
