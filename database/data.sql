@@ -1,5 +1,5 @@
 insert into "restaurants" (
-  "restaurantId",
+  "id",
   "alias",
   "url",
   "imageUrl",

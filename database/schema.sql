@@ -8,7 +8,7 @@ create schema "public";
 
 create table "public"."restaurants" (
   "databaseId"       serial,
-  "restaurantId"     text    not null,
+  "id"               text    not null,
   "alias"            text    not null,
   "url"              text    not null,
   "imageUrl"         text    not null,
