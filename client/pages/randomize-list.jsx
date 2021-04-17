@@ -17,6 +17,7 @@ export default class RandomizeList extends React.Component {
       .then(results => {
         const restaurantsConverted = results.map(restaurant => {
           const restaurantConverted = {
+            id: restaurant.id,
             alias: restaurant.alias,
             url: restaurant.url,
             image_url: restaurant.imageUrl,
@@ -40,7 +41,7 @@ export default class RandomizeList extends React.Component {
     const restaurants = this.state.restaurants;
     const divRestaruants = restaurants.map(restaurant => {
       return (
-        <div key={restaurant.alias} className="restaurant-randomize one-third-column">
+        <div key={restaurant.alias} className="restaurant-randomize one-third-column" id={restaurant.id}>
           <div className="image-container">
             <a href={restaurant.url} target="_blank" rel="noreferrer">
               <img className="restaurant-image" src={restaurant.image_url}></img>
