@@ -11,15 +11,21 @@ export default class EatHere extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('/api/randomizerListAll')
-  //     .then(res => res.json())
-  //     .then(result => {
-  //       const index = Math.floor
-  //     });
-  // }
+  componentDidMount() {
+    const date = new Date();
+    const day = date.getDay();
+    fetch('/api/randomizerListAll')
+      .then(res => res.json())
+      .then(results => {
+        const index = Math.floor(Math.random() * (results.length));
+        this.setState({ dayOfWeek: day, restaurantChosen: results[index] });
+      });
+  }
 
   render() {
-    return null;
+    // console.log(this.state);
+    return (
+      <div className="placeholder"></div>
+    );
   }
 }
