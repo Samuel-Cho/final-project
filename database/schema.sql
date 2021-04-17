@@ -7,6 +7,7 @@ drop schema "public" cascade;
 create schema "public";
 
 create table "public"."restaurants" (
+  "databaseId"       serial,
   "restaurantId"     text    not null,
   "alias"            text    not null,
   "url"              text    not null,
@@ -15,5 +16,5 @@ create table "public"."restaurants" (
   "address1"         text    not null,
   "rating"           float   not null,
   "reviewCount"      integer not null,
-  primary key ("restaurantId")
+  primary key ("databaseId")
 )

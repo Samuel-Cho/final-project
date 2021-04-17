@@ -1,5 +1,5 @@
 insert into "restaurants" (
-  "restaurantId"
+  "restaurantId",
   "alias",
   "url",
   "imageUrl",
@@ -8,7 +8,7 @@ insert into "restaurants" (
   "rating",
   "reviewCount"
 ) values (
-  'ExampleRestaurantTestId'
+  'ExampleRestaurantTestId',
   'example-restaurant',
   'http://example.com/',
   'https://phcdn.b-cdn.net/wp-content/uploads/2017/08/example.com-domain.png',
