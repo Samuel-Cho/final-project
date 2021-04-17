@@ -70,7 +70,7 @@ export default class RandomizeList extends React.Component {
             {divRestaruants}
           </div>
           <div className="randomize-button-container">
-            <button className="randomize-button">Randomize</button>
+            <a className="randomize-button">Randomize</a>
           </div>
         </div>
     );
