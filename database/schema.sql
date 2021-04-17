@@ -7,7 +7,7 @@ drop schema "public" cascade;
 create schema "public";
 
 create table "public"."restaurants" (
-  "restaurantId"     serial,
+  "restaurantId"     text    not null,
   "alias"            text    not null,
   "url"              text    not null,
   "imageUrl"         text    not null,
