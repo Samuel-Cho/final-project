@@ -4,7 +4,7 @@ export default class EatHere extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restuarant: null,
+      restaurant: null,
       dayOfWeek: null
     };
   }
