@@ -1,4 +1,5 @@
 import React from 'react';
+// import RestaurantHours from '../components/restaurant-hours';
 
 export default class EatHere extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ export default class EatHere extends React.Component {
   }
 
   render() {
+    // console.log(this.state);
     return (
       <div className="placeholder"></div>
     );
