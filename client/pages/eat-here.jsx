@@ -1,11 +1,9 @@
 import React from 'react';
-// import StarRating from '../components/star-rating';
 
 export default class EatHere extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // restaurantChosen: null,
       restuaran: null,
       dayOfWeek: null
     };
@@ -24,23 +22,10 @@ export default class EatHere extends React.Component {
           .then(result => {
             this.setState({ dayOfWeek: day, restaurant: result });
           });
-        // this.setState({ dayOfWeek: day, restaurantChosen: results[index] });
       });
   }
 
-  // componentDidUpdate(prevState) {
-  //   const { dayOfWeek } = this.state;
-  //   if (dayOfWeek !== prevState.dayOfWeek && dayOfWeek !== null) {
-  //     fetch(`/api/business/${this.state.restaurantChosen.id}`)
-  //       .then(res => res.json())
-  //       .then(result => {
-  //         this.setState({ restaurantRender: result[0] });
-  //       });
-  //   }
-  // }
-
   render() {
-    // console.log(this.state);
     return (
       <div className="placeholder"></div>
     );
