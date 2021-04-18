@@ -62,6 +62,16 @@ app.get('/api/randomizerListAll', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/business/:id', (req, res, next) => {
+  const id = req.params.id;
+  if (!id) {
+    throw new ClientError(400, 'restaurant id is required');
+  }
+  client.business(id)
+    .then(searchResults => res.json(searchResults.jsonBody))
+    .catch(err => next(err));
+});
+
 app.post('/api/save', (req, res, next) => {
   const { id, alias, url, imageUrl, name, location: { address1 }, rating, reviewCount } = req.body;
   if (!id || !alias || !url || !imageUrl || !name || !address1 || !rating || !reviewCount) {
