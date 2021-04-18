@@ -6,6 +6,7 @@ import SearchResults from './pages/search-results';
 import PageWrapper from './components/page-wrapper';
 import AppDrawer from './components/app-drawer';
 import RandomizeList from './pages/randomize-list';
+import EatHere from './pages/eat-here';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -43,6 +44,8 @@ export default class App extends React.Component {
       );
     } else if (this.state.route.path === 'randomize') {
       return <RandomizeList />;
+    } else if (this.state.route.path === 'eatHere') {
+      return <EatHere />;
     }
   }
 

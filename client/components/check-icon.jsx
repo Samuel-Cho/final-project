@@ -6,6 +6,7 @@ export default class CheckIcon extends React.Component {
     this.state = {
       restaurantsDbAliases: props.restaurantsDbAliases,
       restaurant: {
+        id: props.restaurant.id,
         alias: props.restaurant.alias,
         url: props.restaurant.url,
         imageUrl: props.restaurant.image_url,

@@ -62,17 +62,27 @@ app.get('/api/randomizerListAll', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/business/:id', (req, res, next) => {
+  const id = req.params.id;
+  if (!id) {
+    throw new ClientError(400, 'restaurant id is required');
+  }
+  client.business(id)
+    .then(searchResults => res.json(searchResults.jsonBody))
+    .catch(err => next(err));
+});
+
 app.post('/api/save', (req, res, next) => {
-  const { alias, url, imageUrl, name, location: { address1 }, rating, reviewCount } = req.body;
-  if (!alias || !url || !imageUrl || !name || !address1 || !rating || !reviewCount) {
-    throw new ClientError(400, 'alias, url, image_url, name, address1, rating, and review_count are required fields');
+  const { id, alias, url, imageUrl, name, location: { address1 }, rating, reviewCount } = req.body;
+  if (!id || !alias || !url || !imageUrl || !name || !address1 || !rating || !reviewCount) {
+    throw new ClientError(400, 'id, alias, url, image_url, name, address1, rating, and review_count are required fields');
   }
   const sql = `
-    insert into "restaurants" ("alias", "url", "imageUrl", "name", "address1", "rating", "reviewCount")
-    values ($1, $2, $3, $4, $5, $6, $7)
+    insert into "restaurants" ("id", "alias", "url", "imageUrl", "name", "address1", "rating", "reviewCount")
+    values ($1, $2, $3, $4, $5, $6, $7, $8)
     returning *;
   `;
-  const params = [alias, url, imageUrl, name, address1, rating, reviewCount];
+  const params = [id, alias, url, imageUrl, name, address1, rating, reviewCount];
   db.query(sql, params)
     .then(result => {
       res.status(201).json(result.rows);
