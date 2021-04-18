@@ -5,7 +5,7 @@ export default class EatHere extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurant: null,
+      restaurant: {},
       dayOfWeek: null
     };
   }
@@ -28,8 +28,13 @@ export default class EatHere extends React.Component {
 
   render() {
     // console.log(this.state);
+    // const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
+    // const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
     return (
-      <div className="placeholder"></div>
+      <>
+
+        <div className="placeholder"></div>
+      </>
     );
   }
 }
