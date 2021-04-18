@@ -1,5 +1,6 @@
 import React from 'react';
 // import RestaurantHours from '../components/restaurant-hours';
+// import { restaurantHours } from '../lib';
 
 export default class EatHere extends React.Component {
   constructor(props) {
@@ -28,8 +29,14 @@ export default class EatHere extends React.Component {
 
   render() {
     // console.log(this.state);
-    // const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
-    // const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
+    // if (this.state.dayOfWeek !== null) {
+    //   const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
+    //   const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
+    //   const openHour = restaurantHours(open);
+    //   const closeHour = restaurantHours(close)
+    //   console.log('open:', openHour);
+    //   console.log('close:', closeHour);
+    // }
     return (
       <>
 
