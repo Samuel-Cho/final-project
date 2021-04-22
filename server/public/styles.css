@@ -343,8 +343,6 @@ li:hover,
   display: flex;
   height: 35%;
   width: 100%;
-
-  /* justify-content: space-around; */
 }
 
 .eat-here-detail-container {

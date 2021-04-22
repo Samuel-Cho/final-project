@@ -1,5 +1,4 @@
 import React from 'react';
-// import RestaurantHours from '../components/restaurant-hours';
 import { restaurantHours } from '../lib';
 import StarRating from '../components/star-rating';
 
@@ -29,15 +28,12 @@ export default class EatHere extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
     const { restaurant } = this.state;
     if (this.state.dayOfWeek !== null) {
       const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
       const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
       const openHour = restaurantHours(open);
       const closeHour = restaurantHours(close);
-      // console.log('open:', openHour);
-      // console.log('close:', closeHour);
       return (
         <>
           <div className="eat-here-container mobile">
