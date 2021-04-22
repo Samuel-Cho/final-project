@@ -1,6 +1,6 @@
 import React from 'react';
 // import RestaurantHours from '../components/restaurant-hours';
-// import { restaurantHours } from '../lib';
+import { restaurantHours } from '../lib';
 import StarRating from '../components/star-rating';
 
 export default class EatHere extends React.Component {
@@ -32,10 +32,10 @@ export default class EatHere extends React.Component {
     // console.log(this.state);
     const { restaurant } = this.state;
     if (this.state.dayOfWeek !== null) {
-      // const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
-      // const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
-      // const openHour = restaurantHours(open);
-      // const closeHour = restaurantHours(close)
+      const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
+      const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
+      const openHour = restaurantHours(open);
+      const closeHour = restaurantHours(close);
       // console.log('open:', openHour);
       // console.log('close:', closeHour);
       return (
@@ -44,8 +44,7 @@ export default class EatHere extends React.Component {
             <div className="eat-here-header">
               <h2 className="eat-here">Eat Here!</h2>
             </div>
-
-            <div className="eat-here-details" id={restaurant.id}>
+            <div className="eat-here-details">
               <div className="eat-here-image-container">
                 <img className="eat-here-restaurant-image" src={restaurant.image_url}></img>
               </div>
@@ -60,13 +59,33 @@ export default class EatHere extends React.Component {
                 </div>
               </div>
             </div>
-
             <div className="visit-yelp-button-container">
               <a className="visit-yelp-button" href={restaurant.url} target="_blank" rel="noreferrer">Visit Yelp</a>
             </div>
           </div>
           <div className="eat-here-container desktop">
-
+            <div className="eat-here-header">
+              <h2 className="eat-here">Eat Here!</h2>
+            </div>
+            <div className="eat-here-details">
+              <div className="eat-here-image-container">
+                <img className="eat-here-restaurant-image" src={restaurant.image_url}></img>
+              </div>
+              <div className="eat-here-bottom-container">
+                <div className="eat-here-detail-container">
+                  <p className="eat-here-restaurant-name">{restaurant.name}</p>
+                  <p className="eat-here-hours">{`${openHour} - ${closeHour}`}</p>
+                  <p className="eat-here-restaurant-address">{restaurant.location.address1}</p>
+                  <div className="eat-here-restaurant-rating">
+                    <StarRating rating={restaurant.rating} />
+                  </div>
+                  <p className="eat-here-restaurant-review-count">{`Based on ${restaurant.review_count} Review`}</p>
+                  <div className="visit-yelp-button-container">
+                    <a className="visit-yelp-button" href={restaurant.url} target="_blank" rel="noreferrer">Visit Yelp</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </>
       );

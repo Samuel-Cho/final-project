@@ -537,6 +537,36 @@ li:hover,
     font-size: 1.8rem;
   }
 
+  .eat-here-details {
+    display: flex;
+    width: 640px;
+    height: 380px;
+  }
+
+  .eat-here-image-container {
+    height: 380px;
+    width: 380px;
+  }
+
+  .eat-here-restaurant-image {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .eat-here-bottom-container {
+    justify-content: space-around;
+    width: 260px;
+    height: 100%;
+  }
+
+  .eat-here-detail-container {
+    width: 80%;
+    padding-left: 0;
+  }
+
+  .eat-here-restaurant-name {
+    font-size: 1;
+  }
+
   .mobile {
     display: none;
   }
