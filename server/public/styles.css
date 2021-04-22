@@ -537,6 +537,10 @@ li:hover,
     font-size: 1.8rem;
   }
 
+  .eat-here {
+    font-size: 1.7rem;
+  }
+
   .eat-here-details {
     display: flex;
     width: 640px;
@@ -561,10 +565,17 @@ li:hover,
   .eat-here-detail-container {
     width: 80%;
     padding-left: 0;
+    font-size: 1.2rem;
+    justify-content: space-evenly;
   }
 
   .eat-here-restaurant-name {
-    font-size: 1;
+    font-size: 1.5rem;
+  }
+
+  .eat-here-restaurant-rating i {
+    font-size: 1.3rem;
+    margin-right: 10px;
   }
 
   .mobile {
