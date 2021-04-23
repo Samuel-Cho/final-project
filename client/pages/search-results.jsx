@@ -51,9 +51,15 @@ export default class SearchResults extends React.Component {
       );
     });
     return (
-      <div className="restaurant-list-container ">
-        {divRestaruants}
-      </div>
+      <>
+        <div className="restaurant-list-container mobile">
+          <h2 className="restaurant-list-header">Restuarant List</h2>
+          {divRestaruants}
+        </div>
+        <div className="restaurant-list-container desktop">
+          {divRestaruants}
+        </div>
+      </>
     );
   }
 }

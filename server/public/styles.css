@@ -127,6 +127,11 @@ header {
   background: #142850;
 }
 
+.restaurant-list-header {
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
 .restaurant-list-container,
 .container {
   margin: 40px 0 40px 0;
@@ -388,7 +393,16 @@ li:hover,
   }
 
   .drawer-container {
-    text-align: end;
+    /* text-align: end; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .drawer {
+    margin-right: 20px;
+    margin-left: 30px;
+    font-size: 2rem;
   }
 
   .app-name-container {
@@ -402,10 +416,6 @@ li:hover,
     top: 15%;
     left: 27%;
     font-size: 2.5rem;
-  }
-
-  .drawer {
-    font-size: 2rem;
   }
 
   .search-form {

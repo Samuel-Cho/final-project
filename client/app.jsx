@@ -58,7 +58,7 @@ export default class App extends React.Component {
         <>
           <PageWrapper path={this.state.route.path}>
             <AppDrawer />
-            <Header />
+            <Header path={this.state.route.path}/>
             {this.renderPage()}
           </PageWrapper>
         </>
