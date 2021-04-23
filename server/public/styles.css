@@ -127,9 +127,14 @@ header {
   background: #142850;
 }
 
-.restaurant-list-header {
+.restaurant-list-header,
+.randomize-list-header {
   margin-top: 0;
   margin-bottom: 35px;
+}
+
+.randomize-list-header {
+  color: white;
 }
 
 .restaurant-list-container,
@@ -392,6 +397,10 @@ li:hover,
     height: 90px;
   }
 
+  .column-one-fourth {
+    width: 30%;
+  }
+
   .drawer-container {
     /* text-align: end; */
     display: flex;
@@ -414,7 +423,7 @@ li:hover,
   .app-name {
     position: absolute;
     top: 15%;
-    left: 27%;
+    left: 25%;
     font-size: 2.5rem;
   }
 

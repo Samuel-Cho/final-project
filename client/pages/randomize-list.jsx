@@ -66,7 +66,17 @@ export default class RandomizeList extends React.Component {
       );
     });
     return (
-        <div className="container">
+      <>
+        <div className="container mobile">
+          <div className="randomize-list-container">
+            <h2 className="randomize-list-header">Randomize List</h2>
+            {divRestaruants}
+          </div>
+          <div className="randomize-button-container">
+            <a className="randomize-button" href="#eatHere">Randomize</a>
+          </div>
+        </div>
+        <div className="container desktop">
           <div className="randomize-list-container">
             {divRestaruants}
           </div>
@@ -74,6 +84,7 @@ export default class RandomizeList extends React.Component {
             <a className="randomize-button" href="#eatHere">Randomize</a>
           </div>
         </div>
+      </>
     );
   }
 }
