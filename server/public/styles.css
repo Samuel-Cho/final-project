@@ -41,6 +41,9 @@ header {
 .app-name {
   font-family: 'Spectral', serif;
   margin: 0;
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
 }
 
 .drawer-container {
@@ -122,6 +125,16 @@ header {
 
 .search-button {
   background: #142850;
+}
+
+.restaurant-list-header,
+.randomize-list-header {
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.randomize-list-header {
+  color: white;
 }
 
 .restaurant-list-container,
@@ -281,7 +294,8 @@ li {
 li:hover,
 .unchecked,
 .checked,
-.visit-yelp-button {
+.visit-yelp-button,
+.app-name {
   cursor: pointer;
 }
 
@@ -383,8 +397,21 @@ li:hover,
     height: 90px;
   }
 
+  .column-one-fourth {
+    width: 30%;
+  }
+
   .drawer-container {
-    text-align: end;
+    /* text-align: end; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .drawer {
+    margin-right: 20px;
+    margin-left: 30px;
+    font-size: 2rem;
   }
 
   .app-name-container {
@@ -396,12 +423,8 @@ li:hover,
   .app-name {
     position: absolute;
     top: 15%;
-    left: 27%;
+    left: 25%;
     font-size: 2.5rem;
-  }
-
-  .drawer {
-    font-size: 2rem;
   }
 
   .search-form {
