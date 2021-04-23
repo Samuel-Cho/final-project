@@ -53,7 +53,7 @@ export default class SearchForm extends React.Component {
     super(props);
     this.state = {
       location: '',
-      foodType: ''
+      foodType: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
