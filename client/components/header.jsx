@@ -10,7 +10,7 @@ export default class Header extends React.Component {
           <i className="fas fa-bars drawer" onClick={handleClick}></i>
         </div>
         <div className="app-name-container column-three-fourth">
-          <h1 className="app-name">Teeter Taste</h1>
+          <a href="#" className="app-name">Teeter Taste</a>
         </div>
       </header>
     );
