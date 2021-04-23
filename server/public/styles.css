@@ -479,7 +479,8 @@ li:hover,
     padding: 0;
   }
 
-  .ul-restaurant-list {
+  .ul-restaurant-list,
+  .ul-randomize-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
