@@ -66,6 +66,7 @@ export default class SearchForm extends React.Component {
   }
 
   handleClick(event) {
+    // event.preventDefault();
     const { id } = event.target;
     this.setState({ foodType: id });
   }
@@ -79,11 +80,11 @@ export default class SearchForm extends React.Component {
     const divItemsMobile = foodTypeList.map(foodType => {
       if (foodType.id === this.state.foodType) {
         return (
-          <div onClick={this.handleClick} className="food-type selected" id={foodType.id} key={foodType.id}>{foodType.text}</div>
+          <button type="button" onClick={this.handleClick} className="food-type selected" id={foodType.id} key={foodType.id}>{foodType.text}</button>
         );
       } else {
         return (
-          <div onClick={this.handleClick} className="food-type" id={foodType.id} key={foodType.id}>{foodType.text}</div>
+          <button type="button" onClick={this.handleClick} className="food-type" id={foodType.id} key={foodType.id}>{foodType.text}</button>
         );
       }
     });
@@ -91,13 +92,13 @@ export default class SearchForm extends React.Component {
       if (foodType.id === this.state.foodType) {
         return (
           <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
-            <div onClick={this.handleClick} className="food-type selected" id={foodType.id}>{foodType.text}</div>
+            <button type="button" onClick={this.handleClick} className="food-type selected" id={foodType.id}>{foodType.text}</button>
           </div>
         );
       } else {
         return (
           <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
-            <div onClick={this.handleClick} className="food-type" id={foodType.id}>{foodType.text}</div>
+            <button type="button" onClick={this.handleClick} className="food-type" id={foodType.id}>{foodType.text}</button>
           </div>
         );
       }
