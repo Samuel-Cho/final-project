@@ -171,6 +171,7 @@ header {
 }
 
 .image-container {
+  height: 100%;
   margin-right: 10px;
 }
 
@@ -182,6 +183,7 @@ header {
 }
 
 .bottom-container {
+  height: 100%;
   display: flex;
 }
 
@@ -475,6 +477,13 @@ li:hover,
     width: 63%;
     margin: 40px auto;
     padding: 0;
+  }
+
+  .ul-restaurant-list,
+  .ul-randomize-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .restaurant-list-container,
