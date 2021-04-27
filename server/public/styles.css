@@ -388,6 +388,17 @@ li:hover,
   display: none;
 }
 
+@media screen and (min-width: 375px) and (orientation: portrait) {
+  .search-form {
+    height: 95%;
+  }
+
+  .food-type {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   .desktop {
     display: flex;
