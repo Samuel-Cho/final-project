@@ -449,6 +449,7 @@ li:hover,
   .container {
     overflow-y: auto;
     flex-direction: row;
+    padding: 0 20px 0 20px;
   }
 
   .restaurant,
@@ -497,6 +498,11 @@ li:hover,
   .restaurant-link {
     width: 60%;
     padding-left: 15px;
+  }
+
+  .randomize-button {
+    padding: 10px 10px;
+    margin-left: 20px;
   }
 
   .mobile {
@@ -679,6 +685,10 @@ li:hover,
   .list-icon,
   .check-circle-icon {
     font-size: 1.8rem;
+  }
+
+  .randomize-button {
+    padding: 10px 30px;
   }
 
   .eat-here {
