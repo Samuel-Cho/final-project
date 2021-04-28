@@ -441,6 +441,38 @@ li:hover,
     margin-bottom: 10px;
   }
 
+  .restaurant-list-container {
+    height: 70%;
+  }
+
+  .restaurant {
+    display: block;
+    height: 230px;
+    margin-right: 20px;
+  }
+
+  /* .image-container {
+    margin-right: 0;
+    height: 65%;
+  }
+
+  .restaurant-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .bottom-container {
+    height: 35%;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .restaurant-link {
+    width: 60%;
+    padding-left: 15px;
+  } */
+
   .mobile {
     display: none;
   }
@@ -530,6 +562,7 @@ li:hover,
 
   .restaurant-list-container,
   .container {
+    height: 78%;
     width: 63%;
     margin: 40px auto;
     padding: 0;
@@ -550,6 +583,7 @@ li:hover,
   .restaurant-randomize {
     height: 320px;
     display: block;
+    margin-right: 0;
   }
 
   .image-container {
