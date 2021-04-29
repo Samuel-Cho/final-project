@@ -745,7 +745,9 @@ li:hover,
   .restaurant-list-container,
   .container {
     height: 78%;
-    width: 63%;
+
+    /* width: 63%; */
+    width: 85%;
     margin: 40px auto;
     padding: 0;
   }
@@ -899,6 +901,11 @@ li:hover,
 
   .app-name {
     left: 20%;
+  }
+
+  .restaurant-list-container,
+  .container {
+    width: 63%;
   }
 
   .mobile {
