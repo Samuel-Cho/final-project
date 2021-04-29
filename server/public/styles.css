@@ -171,7 +171,6 @@ header {
 }
 
 .image-container {
-  height: 100%;
   margin-right: 10px;
 }
 
@@ -183,7 +182,6 @@ header {
 }
 
 .bottom-container {
-  height: 100%;
   display: flex;
 }
 
@@ -390,24 +388,311 @@ li:hover,
   display: none;
 }
 
-@media screen and (min-width: 1000px) and (orientation: landscape) {
+@media screen and (height: 667px) and (orientation: portrait) {
+  .search-form {
+    height: 95%;
+  }
+
+  .food-type {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (orientation: portrait) {
+  .desktop {
+    display: flex;
+  }
+
+  .drawer-container {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .drawer {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .page-name {
+    font-size: 1.2rem;
+  }
+
+  .search-form {
+    justify-content: space-around;
+  }
+
+  .search-button {
+    padding: 7px 30px;
+    margin-left: 10px;
+  }
+
+  .column-one-third {
+    display: flex;
+    width: calc(100% / 3);
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+
+  .food-type-container {
+    align-content: space-between;
+    height: 65%;
+  }
+
+  .restaurant-list-container,
+  .randomize-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .one-third-column {
+    width: 27%;
+  }
+
+  .restaurant,
+  .restaurant-randomize {
+    height: 275px;
+    display: block;
+    margin-right: 0;
+  }
+
+  .image-container {
+    margin-right: 0;
+    height: 65%;
+  }
+
+  .restaurant-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .bottom-container {
+    height: 35%;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .restaurant-link {
+    width: 60%;
+    padding-left: 15px;
+  }
+
+  .eat-here {
+    font-size: 1.7rem;
+  }
+
+  .eat-here-details {
+    width: 380px;
+    height: 640px;
+  }
+
+  .eat-here-image-container {
+    height: 380px;
+    width: 380px;
+  }
+
+  .eat-here-restaurant-image {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .eat-here-bottom-container {
+    justify-content: space-around;
+    height: 40.5%;
+  }
+
+  .eat-here-detail-container {
+    width: 80%;
+    padding-left: 0;
+    font-size: 1.2rem;
+    justify-content: space-evenly;
+  }
+
+  .eat-here-restaurant-name {
+    font-size: 1.5rem;
+  }
+
+  .eat-here-restaurant-rating i {
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) {
   .desktop {
     display: flex;
   }
 
   header {
+    height: 15%;
+  }
+}
+
+@media screen and (min-width: 667px) and (orientation: landscape) {
+  .drawer-container {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .drawer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .page-name {
+    font-size: 1rem;
+  }
+
+  .search-form {
+    padding-top: 20px;
+    height: 75%;
+  }
+
+  .search-button {
+    padding: 7px 30px;
+    margin-left: 10px;
+  }
+
+  .food-type {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .restaurant-list-container,
+  .container {
+    height: 70%;
+  }
+
+  .container {
+    overflow-y: auto;
+    flex-direction: row;
+    padding: 0 20px 0 20px;
+  }
+
+  .restaurant,
+  .restaurant-randomize {
+    display: block;
+    height: 230px;
+    margin-right: 20px;
+  }
+
+  .randomize-list-container {
+    display: flex;
+  }
+
+  .image-container {
+    margin-right: 0;
+    height: 65%;
+  }
+
+  .restaurant-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .bottom-container {
+    height: 35%;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .restaurant-link {
+    width: 60%;
+    padding-left: 15px;
+  }
+
+  .randomize-button {
+    padding: 10px 10px;
+    margin-left: 20px;
+  }
+
+  .eat-here-details {
+    display: flex;
+    width: 400px;
+    height: 200px;
+  }
+
+  .eat-here-image-container {
+    height: 200px;
+    width: 200px;
+  }
+
+  .eat-here-restaurant-image {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .eat-here-bottom-container {
+    justify-content: space-around;
+    width: 200px;
+    height: 100%;
+  }
+
+  .eat-here-detail-container {
+    width: 80%;
+    padding-left: 0;
+    justify-content: space-evenly;
+  }
+
+  .visit-yelp-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 812px) and (orientation: landscape) {
+  .column-one-third {
+    display: flex;
+    width: calc(100% / 3);
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 1000px) and (orientation: landscape) {
+  header {
     height: 90px;
   }
 
   .column-one-fourth {
-    width: 30%;
+    width: 40%;
   }
 
-  .drawer-container {
-    /* text-align: end; */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  .page-name {
+    font-size: 1.2rem;
   }
 
   .drawer {
@@ -425,11 +710,12 @@ li:hover,
   .app-name {
     position: absolute;
     top: 15%;
-    left: 25%;
+    left: 15%;
     font-size: 2.5rem;
   }
 
   .search-form {
+    padding-top: 40px;
     height: 95%;
     width: 63%;
     justify-content: unset;
@@ -455,35 +741,17 @@ li:hover,
     padding: 10px 20px;
   }
 
-  .column-one-third {
-    display: flex;
-    width: calc(100% / 3);
-  }
-
-  .left {
-    justify-content: flex-start;
-  }
-
-  .center {
-    justify-content: center;
-  }
-
-  .right {
-    justify-content: flex-end;
-  }
-
   .restaurant-list-container,
   .container {
-    width: 63%;
+    height: 78%;
+    width: 85%;
     margin: 40px auto;
     padding: 0;
   }
 
-  .ul-restaurant-list,
-  .ul-randomize-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .container {
+    overflow-y: visible;
+    flex-direction: column;
   }
 
   .restaurant-list-container,
@@ -501,28 +769,7 @@ li:hover,
   .restaurant-randomize {
     height: 320px;
     display: block;
-  }
-
-  .image-container {
     margin-right: 0;
-    height: 65%;
-  }
-
-  .restaurant-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px 4px 0 0;
-  }
-
-  .bottom-container {
-    height: 35%;
-    width: 100%;
-    justify-content: space-around;
-  }
-
-  .restaurant-link {
-    width: 60%;
-    padding-left: 15px;
   }
 
   .restaurant-name {
@@ -567,6 +814,15 @@ li:hover,
     font-size: 1.8rem;
   }
 
+  .randomize-button,
+  .visit-yelp-button {
+    padding: 10px 30px;
+  }
+
+  .visit-yelp-button {
+    font-size: 18px;
+  }
+
   .eat-here {
     font-size: 1.7rem;
   }
@@ -606,6 +862,25 @@ li:hover,
   .eat-here-restaurant-rating i {
     font-size: 1.3rem;
     margin-right: 10px;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  .page-name {
+    font-size: 1.5rem;
+  }
+
+  .app-name {
+    left: 20%;
+  }
+
+  .restaurant-list-container,
+  .container {
+    width: 63%;
   }
 
   .mobile {
