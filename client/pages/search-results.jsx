@@ -26,7 +26,7 @@ export default class SearchResults extends React.Component {
     const restaurants = this.state.restaurants;
     const divRestaruants = restaurants.map(restaurant => {
       return (
-        <div key={restaurant.alias} className="restaurant one-third-column" id={restaurant.id}>
+        <li key={restaurant.alias} className="restaurant one-third-column" id={restaurant.id}>
           <div className="image-container">
             <a href={restaurant.url} target="_blank" rel="noreferrer">
               <img className="restaurant-image" src={restaurant.image_url}></img>
@@ -47,17 +47,21 @@ export default class SearchResults extends React.Component {
               <CheckIcon restaurant={restaurant} restaurantsDbAliases={this.state.restaurantsDbAliases} />
             </div>
           </div>
-        </div>
+        </li>
       );
     });
     return (
       <>
         <div className="restaurant-list-container mobile">
           <h2 className="restaurant-list-header">Restuarant List</h2>
-          {divRestaruants}
+          <ul className="ul-restaurant-list">
+            {divRestaruants}
+          </ul>
         </div>
         <div className="restaurant-list-container desktop">
-          {divRestaruants}
+          <ul className="ul-restaurant-list">
+            {divRestaruants}
+          </ul>
         </div>
       </>
     );

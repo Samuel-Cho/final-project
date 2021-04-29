@@ -41,7 +41,7 @@ export default class RandomizeList extends React.Component {
     const restaurants = this.state.restaurants;
     const divRestaruants = restaurants.map(restaurant => {
       return (
-        <div key={restaurant.alias} className="restaurant-randomize one-third-column" id={restaurant.id}>
+        <li key={restaurant.alias} className="restaurant-randomize one-third-column" id={restaurant.id}>
           <div className="image-container">
             <a href={restaurant.url} target="_blank" rel="noreferrer">
               <img className="restaurant-image" src={restaurant.image_url}></img>
@@ -62,7 +62,7 @@ export default class RandomizeList extends React.Component {
               <CheckIcon restaurant={restaurant} restaurantsDbAliases={this.state.restaurantsDbAliases} />
             </div>
           </div>
-        </div>
+        </li>
       );
     });
     return (
@@ -70,7 +70,9 @@ export default class RandomizeList extends React.Component {
         <div className="container mobile">
           <div className="randomize-list-container">
             <h2 className="randomize-list-header">Randomize List</h2>
-            {divRestaruants}
+            <ul className="ul-randomize-list">
+              {divRestaruants}
+            </ul>
           </div>
           <div className="randomize-button-container">
             <a className="randomize-button" href="#eatHere">Randomize</a>
@@ -78,7 +80,9 @@ export default class RandomizeList extends React.Component {
         </div>
         <div className="container desktop">
           <div className="randomize-list-container">
-            {divRestaruants}
+            <ul className="ul-randomize-list">
+              {divRestaruants}
+            </ul>
           </div>
           <div className="randomize-button-container">
             <a className="randomize-button" href="#eatHere">Randomize</a>
