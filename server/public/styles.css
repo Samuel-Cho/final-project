@@ -399,6 +399,63 @@ li:hover,
   }
 }
 
+@media screen and (min-width: 768px) and (orientation: portrait) {
+  .desktop {
+    display: flex;
+  }
+
+  .drawer-container {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .drawer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .page-name {
+    font-size: 1.2rem;
+  }
+
+  .search-form {
+    justify-content: space-around;
+  }
+
+  .search-button {
+    padding: 7px 30px;
+    margin-left: 10px;
+  }
+
+  .column-one-third {
+    display: flex;
+    width: calc(100% / 3);
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+
+  .food-type-container {
+    align-content: space-between;
+    height: 65%;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
 @media screen and (orientation: landscape) {
   .desktop {
     display: flex;
@@ -569,7 +626,7 @@ li:hover,
   }
 
   .column-one-fourth {
-    width: 30%;
+    width: 40%;
   }
 
   /* .drawer-container {
@@ -579,7 +636,7 @@ li:hover,
   } */
 
   .page-name {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .drawer {
@@ -597,7 +654,7 @@ li:hover,
   .app-name {
     position: absolute;
     top: 15%;
-    left: 25%;
+    left: 15%;
     font-size: 2.5rem;
   }
 
@@ -788,6 +845,20 @@ li:hover,
   .eat-here-restaurant-rating i {
     font-size: 1.3rem;
     margin-right: 10px;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  .page-name {
+    font-size: 1.5rem;
+  }
+
+  .app-name {
+    left: 20%;
   }
 
   .mobile {
