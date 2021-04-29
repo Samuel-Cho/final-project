@@ -544,6 +544,25 @@ li:hover,
   }
 }
 
+@media screen and (min-width: 812px) and (orientation: landscape) {
+  .column-one-third {
+    display: flex;
+    width: calc(100% / 3);
+  }
+
+  .left {
+    justify-content: flex-start;
+  }
+
+  .center {
+    justify-content: center;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+}
+
 @media screen and (min-width: 1000px) and (orientation: landscape) {
   header {
     height: 90px;
@@ -609,12 +628,12 @@ li:hover,
     padding: 10px 20px;
   }
 
-  .column-one-third {
+  /* .column-one-third {
     display: flex;
     width: calc(100% / 3);
-  }
+  } */
 
-  .left {
+  /* .left {
     justify-content: flex-start;
   }
 
@@ -624,7 +643,7 @@ li:hover,
 
   .right {
     justify-content: flex-end;
-  }
+  } */
 
   .restaurant-list-container,
   .container {
