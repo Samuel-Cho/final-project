@@ -793,6 +793,10 @@ li:hover,
     justify-content: space-between;
   } */
 
+  .randomize-list-container {
+    height: 88%;
+  }
+
   .ul-restaurant-list,
   .ul-randomize-list {
     display: flex;
