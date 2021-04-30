@@ -172,6 +172,7 @@ header {
 
 .image-container {
   margin-right: 10px;
+  height: 100%;
 }
 
 .restaurant-image {
@@ -600,7 +601,8 @@ li:hover,
     margin-top: 30px;
   }
 
-  .ul-restaurant-list {
+  .ul-restaurant-list,
+  .ul-randomize-list {
     display: flex;
   }
 
@@ -619,6 +621,7 @@ li:hover,
 
   .randomize-list-container {
     display: flex;
+    height: 100%;
   }
 
   .image-container {
