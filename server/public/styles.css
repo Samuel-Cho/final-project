@@ -452,8 +452,15 @@ li:hover,
     height: 65%;
   }
 
-  .restaurant-list-container,
+  /* .restaurant-list-container,
   .randomize-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  } */
+
+  .ul-restaurant-list,
+  .ul-randomize-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -779,8 +786,15 @@ li:hover,
     flex-direction: column;
   }
 
-  .restaurant-list-container,
+  /* .restaurant-list-container,
   .randomize-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  } */
+
+  .ul-restaurant-list,
+  .ul-randomize-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
