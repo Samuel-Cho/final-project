@@ -66,7 +66,6 @@ export default class SearchForm extends React.Component {
   }
 
   handleClick(event) {
-    // event.preventDefault();
     const { id } = event.target;
     this.setState({ foodType: id });
   }
