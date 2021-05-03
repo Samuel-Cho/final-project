@@ -308,6 +308,14 @@ li:hover,
   color: #00909e;
 }
 
+.food-type:hover {
+  box-shadow: 4px 4px 2px #142850;
+}
+
+.search-button:hover {
+  box-shadow: 4px 4px 2px #00909e;
+}
+
 .container {
   display: flex;
   flex-direction: column;
