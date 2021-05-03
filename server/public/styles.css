@@ -300,6 +300,14 @@ li:hover,
   cursor: pointer;
 }
 
+.drawer:hover,
+.app-name:hover,
+.search-restaurant:hover,
+.restaurant-list:hover,
+.randomize-list:hover {
+  color: #00909e;
+}
+
 .container {
   display: flex;
   flex-direction: column;
