@@ -316,6 +316,10 @@ li:hover,
   box-shadow: 4px 4px 2px #00909e;
 }
 
+.restaurant:hover {
+  box-shadow: 4px 4px 2px #00909e;
+}
+
 .container {
   display: flex;
   flex-direction: column;
