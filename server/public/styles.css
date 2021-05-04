@@ -407,10 +407,10 @@ li:hover,
   box-shadow: 4px 4px 2px #00909e;
 }
 
-/* .checked:hover,
+.checked:hover,
 .unchecked:hover {
-  background: #142850,
-} */
+  color: #142850;
+}
 
 .randomize-button:hover {
   box-shadow: 4px 4px 2px white;
