@@ -278,13 +278,18 @@ li {
   color: #142850;
 }
 
-.modal {
+.modal,
+.loading-modal {
   background: rgba(41, 41, 41, 0.55);
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   right: 0;
+}
+
+.loading-modal {
+  z-index: 1;
 }
 
 .container {

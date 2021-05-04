@@ -7,13 +7,15 @@ import PageWrapper from './components/page-wrapper';
 import AppDrawer from './components/app-drawer';
 import RandomizeList from './pages/randomize-list';
 import EatHere from './pages/eat-here';
+import Loading from './components/loading';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       route: parseRoute(window.location.hash),
-      drawerClosed: true
+      drawerClosed: true,
+      loading: true
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -50,13 +52,14 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { route, drawerClosed } = this.state;
+    const { route, drawerClosed, loading } = this.state;
     const { handleClick } = this;
-    const contextValue = { route, drawerClosed, handleClick };
+    const contextValue = { route, drawerClosed, handleClick, loading };
     return (
       <AppContext.Provider value={contextValue}>
         <>
           <PageWrapper path={this.state.route.path}>
+            <Loading />
             <AppDrawer />
             <Header path={this.state.route.path}/>
             {this.renderPage()}
