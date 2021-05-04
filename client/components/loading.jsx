@@ -2,8 +2,21 @@ import React from 'react';
 import { AppContext } from '../lib';
 
 export default class Loading extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: props.loading
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.loading !== this.props.loading && prevState.loading !== this.props.loading) {
+      this.setState({ loading: this.props.loading });
+    }
+  }
+
   render() {
-    if (this.context.loading === true) {
+    if (this.state.loading === true) {
       return (
         <div className="loading-modal">
           <div className="gif-container">

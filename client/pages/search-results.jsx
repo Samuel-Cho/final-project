@@ -1,6 +1,7 @@
 import React from 'react';
 import StarRating from '../components/star-rating';
 import CheckIcon from '../components/check-icon';
+import Loading from '../components/loading';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -9,17 +10,18 @@ export default class SearchResults extends React.Component {
       location: props.location,
       foodType: props.foodType,
       restaurants: [],
-      restaurantsDbAliases: []
+      restaurantsDbAliases: [],
+      loading: true
     };
   }
 
   componentDidMount() {
     fetch(`/api/search/${this.state.location}/${this.state.foodType}`)
       .then(res => res.json())
-      .then(businesses => this.setState({ restaurants: businesses.businesses }));
+      .then(businesses => this.setState({ restaurants: businesses.businesses, loading: false }));
     fetch('/api/randomizerList')
       .then(res => res.json())
-      .then(aliases => this.setState({ restaurantsDbAliases: aliases }));
+      .then(aliases => this.setState({ restaurantsDbAliases: aliases, loading: false }));
   }
 
   render() {
@@ -52,6 +54,7 @@ export default class SearchResults extends React.Component {
     });
     return (
       <>
+        <Loading loading={this.state.loading} />
         <div className="restaurant-list-container mobile">
           <h2 className="restaurant-list-header">Restuarant List</h2>
           <ul className="ul-restaurant-list">
