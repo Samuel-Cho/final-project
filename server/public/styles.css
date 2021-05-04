@@ -287,39 +287,6 @@ li {
   right: 0;
 }
 
-.location-search:hover,
-.food-type:hover,
-.search-button:hover,
-.drawer:hover,
-.modal:hover,
-li:hover,
-.unchecked,
-.checked,
-.visit-yelp-button,
-.app-name {
-  cursor: pointer;
-}
-
-.drawer:hover,
-.app-name:hover,
-.search-restaurant:hover,
-.restaurant-list:hover,
-.randomize-list:hover {
-  color: #00909e;
-}
-
-.food-type:hover {
-  box-shadow: 4px 4px 2px #142850;
-}
-
-.search-button:hover {
-  box-shadow: 4px 4px 2px #00909e;
-}
-
-.restaurant:hover {
-  box-shadow: 4px 4px 2px #00909e;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -403,6 +370,50 @@ li:hover,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.location-search:hover,
+.food-type:hover,
+.search-button:hover,
+.drawer:hover,
+.modal:hover,
+li:hover,
+.unchecked:hover,
+.checked:hover,
+.visit-yelp-button:hover,
+.app-name:hover {
+  cursor: pointer;
+}
+
+.drawer:hover,
+.app-name:hover,
+.search-restaurant:hover,
+.restaurant-list:hover,
+.randomize-list:hover {
+  color: #00909e;
+}
+
+.food-type:hover,
+.visit-yelp-button:hover {
+  box-shadow: 4px 4px 2px #142850;
+}
+
+.search-button:hover {
+  box-shadow: 4px 4px 2px #00909e;
+}
+
+.restaurant:hover,
+.restaurant-randomize:hover {
+  box-shadow: 4px 4px 2px #00909e;
+}
+
+/* .checked:hover,
+.unchecked:hover {
+  background: #142850,
+} */
+
+.randomize-button:hover {
+  box-shadow: 4px 4px 2px white;
 }
 
 .desktop {
