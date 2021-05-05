@@ -75,7 +75,13 @@ export default class SearchResults extends React.Component {
       return (
         <>
           <Loading loading={this.state.loading} />
-          <NoRestaurants />
+          <div className="restaurant-list-container mobile">
+            <h2 className="restaurant-list-header">Restuarant List</h2>
+            <NoRestaurants />
+          </div>
+          <div className="restaurant-list-container desktop">
+            <NoRestaurants />
+          </div>
         </>
       );
     }
