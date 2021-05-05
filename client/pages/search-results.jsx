@@ -18,10 +18,11 @@ export default class SearchResults extends React.Component {
   componentDidMount() {
     fetch(`/api/search/${this.state.location}/${this.state.foodType}`)
       .then(res => res.json())
-      .then(businesses => this.setState({ restaurants: businesses.businesses, loading: false }));
-    fetch('/api/randomizerList')
-      .then(res => res.json())
-      .then(aliases => this.setState({ restaurantsDbAliases: aliases, loading: false }));
+      .then(businesses => {
+        fetch('/api/randomizerList')
+          .then(res => res.json())
+          .then(aliases => this.setState({ restaurants: businesses.businesses, restaurantsDbAliases: aliases, loading: false }));
+      });
   }
 
   render() {
