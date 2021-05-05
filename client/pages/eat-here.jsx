@@ -21,11 +21,15 @@ export default class EatHere extends React.Component {
       .then(results => {
         const index = Math.floor(Math.random() * (results.length));
         const restaurantChosen = results[index];
-        fetch(`/api/business/${restaurantChosen.id}`)
-          .then(res => res.json())
-          .then(result => {
-            this.setState({ dayOfWeek: day, restaurant: result, loading: false });
-          });
+        if (restaurantChosen) {
+          fetch(`/api/business/${restaurantChosen.id}`)
+            .then(res => res.json())
+            .then(result => {
+              this.setState({ dayOfWeek: day, restaurant: result, loading: false });
+            });
+        } else {
+          this.setState({ loading: false });
+        }
       });
   }
 
