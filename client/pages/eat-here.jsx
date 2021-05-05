@@ -1,13 +1,15 @@
 import React from 'react';
 import { restaurantHours } from '../lib';
 import StarRating from '../components/star-rating';
+import Loading from '../components/loading';
 
 export default class EatHere extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurant: {},
-      dayOfWeek: null
+      dayOfWeek: null,
+      loading: true
     };
   }
 
@@ -22,7 +24,7 @@ export default class EatHere extends React.Component {
         fetch(`/api/business/${restaurantChosen.id}`)
           .then(res => res.json())
           .then(result => {
-            this.setState({ dayOfWeek: day, restaurant: result });
+            this.setState({ dayOfWeek: day, restaurant: result, loading: false });
           });
       });
   }
@@ -36,6 +38,7 @@ export default class EatHere extends React.Component {
       const closeHour = restaurantHours(close);
       return (
         <>
+          <Loading loading={this.state.loading} />
           <div className="eat-here-container mobile">
             <div className="eat-here-header">
               <h2 className="eat-here">Eat Here!</h2>
@@ -86,7 +89,7 @@ export default class EatHere extends React.Component {
         </>
       );
     } else {
-      return null;
+      return <Loading loading={this.state.loading} />;
     }
   }
 }
