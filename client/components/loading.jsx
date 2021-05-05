@@ -1,5 +1,4 @@
 import React from 'react';
-import { AppContext } from '../lib';
 
 export default class Loading extends React.Component {
   constructor(props) {
@@ -29,5 +28,3 @@ export default class Loading extends React.Component {
     }
   }
 }
-
-Loading.contextType = AppContext;

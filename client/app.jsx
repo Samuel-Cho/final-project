@@ -7,7 +7,6 @@ import PageWrapper from './components/page-wrapper';
 import AppDrawer from './components/app-drawer';
 import RandomizeList from './pages/randomize-list';
 import EatHere from './pages/eat-here';
-// import Loading from './components/loading';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -15,7 +14,6 @@ export default class App extends React.Component {
     this.state = {
       route: parseRoute(window.location.hash),
       drawerClosed: true
-      // loading: true
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -59,7 +57,6 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
         <>
           <PageWrapper path={this.state.route.path}>
-            {/* <Loading /> */}
             <AppDrawer />
             <Header path={this.state.route.path}/>
             {this.renderPage()}

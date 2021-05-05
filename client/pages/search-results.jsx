@@ -2,6 +2,7 @@ import React from 'react';
 import StarRating from '../components/star-rating';
 import CheckIcon from '../components/check-icon';
 import Loading from '../components/loading';
+import NoRestaurants from '../components/no-restaurants';
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -53,21 +54,31 @@ export default class SearchResults extends React.Component {
         </li>
       );
     });
-    return (
-      <>
-        <Loading loading={this.state.loading} />
-        <div className="restaurant-list-container mobile">
-          <h2 className="restaurant-list-header">Restuarant List</h2>
-          <ul className="ul-restaurant-list">
-            {divRestaruants}
-          </ul>
-        </div>
-        <div className="restaurant-list-container desktop">
-          <ul className="ul-restaurant-list">
-            {divRestaruants}
-          </ul>
-        </div>
-      </>
-    );
+    if (restaurants.length !== 0) {
+      return (
+        <>
+          <Loading loading={this.state.loading} />
+          <div className="restaurant-list-container mobile">
+            <h2 className="restaurant-list-header">Restuarant List</h2>
+            <ul className="ul-restaurant-list">
+              {divRestaruants}
+            </ul>
+          </div>
+          <div className="restaurant-list-container desktop">
+            <ul className="ul-restaurant-list">
+              {divRestaruants}
+            </ul>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Loading loading={this.state.loading} />
+          <NoRestaurants />
+        </>
+      );
+    }
+
   }
 }
