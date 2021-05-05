@@ -1,13 +1,15 @@
 import React from 'react';
 import StarRating from '../components/star-rating';
 import CheckIcon from '../components/check-icon';
+import Loading from '../components/loading';
 
 export default class RandomizeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurantsDbAliases: [],
-      restaurants: []
+      restaurants: [],
+      loading: true
     };
   }
 
@@ -33,7 +35,7 @@ export default class RandomizeList extends React.Component {
         const restaurantAliases = results.map(restaurant => {
           return { alias: restaurant.alias };
         });
-        this.setState({ restaurantsDbAliases: restaurantAliases, restaurants: restaurantsConverted });
+        this.setState({ restaurantsDbAliases: restaurantAliases, restaurants: restaurantsConverted, loading: false });
       });
   }
 
@@ -67,6 +69,7 @@ export default class RandomizeList extends React.Component {
     });
     return (
       <>
+        <Loading loading={this.state.loading} />
         <div className="container mobile">
           <div className="randomize-list-container">
             <h2 className="randomize-list-header">Randomize List</h2>
