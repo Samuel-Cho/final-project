@@ -2,6 +2,7 @@ import React from 'react';
 import { restaurantHours } from '../lib';
 import StarRating from '../components/star-rating';
 import Loading from '../components/loading';
+import NoRestuarants from '../components/no-restaurants';
 
 export default class EatHere extends React.Component {
   constructor(props) {
@@ -93,7 +94,12 @@ export default class EatHere extends React.Component {
         </>
       );
     } else {
-      return <Loading loading={this.state.loading} />;
+      return (
+        <>
+          <Loading loading={this.state.loading} />
+          <NoRestuarants />
+        </>
+      );
     }
   }
 }
