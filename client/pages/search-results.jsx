@@ -41,17 +41,19 @@ export default class SearchResults extends React.Component {
               } else {
                 this.setState({ loading: false, restaurantsDbAliases: ['error'] });
               }
+            })
+            .catch(err => {
+              console.error(err);
+              this.setState({ loading: false, restaurantsDbAliases: ['error'] });
             });
-          // .catch(err => {
-          //   this.setState({ loading: false, restaurantsDbAliases: ['error'] });
-          // });
         } else {
           this.setState({ loading: false, restaurants: ['error'] });
         }
+      })
+      .catch(err => {
+        console.error(err);
+        this.setState({ loading: false, restaurants: ['error'] });
       });
-    // .catch(err => {
-    //   this.setState({ loading: false, restaurants: ['error'] });
-    // });
   }
 
   render() {
@@ -69,8 +71,7 @@ export default class SearchResults extends React.Component {
           </div>
         </>
       );
-    }
-    if (restaurants.length !== 0) {
+    } else if (restaurants.length !== 0) {
       const divRestaruants = restaurants.map(restaurant => {
         return (
           <li key={restaurant.alias} className="restaurant one-third-column" id={restaurant.id}>
