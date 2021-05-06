@@ -1,5 +1,5 @@
 import React from 'react';
-// import { AppContext } from '../lib';
+import { AppContext } from '../lib';
 
 export default class CheckIconFail extends React.Component {
   constructor(props) {
@@ -11,7 +11,9 @@ export default class CheckIconFail extends React.Component {
   }
 
   handleClick(event) {
-    this.setState({ checkIconModalClosed: true });
+    const { closeCheckIconModal } = this.context;
+    // this.setState({ checkIconModalClosed: true });
+    closeCheckIconModal(true);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -21,13 +23,12 @@ export default class CheckIconFail extends React.Component {
   }
 
   render() {
-    // const {} = this.context;
     if (this.state.checkIconModalClosed === false) {
       return (
         <div className="fail-modal">
           <div className="fail-container">
-            <p>Connection issue with database</p>
-            <button type="button" onClick={this.handleClick} className="close">Close</button>
+            <p className="fail-text">Connection issue with database</p>
+            <button type="button" onClick={this.handleClick} className="close-button">Close</button>
           </div>
         </div>
       );
@@ -37,4 +38,4 @@ export default class CheckIconFail extends React.Component {
   }
 }
 
-// CheckIconFail.contextType = AppContext;
+CheckIconFail.contextType = AppContext;
