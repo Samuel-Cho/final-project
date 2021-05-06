@@ -115,7 +115,8 @@ header {
 
 .search-button,
 .randomize-button,
-.visit-yelp-button {
+.visit-yelp-button,
+.close-button {
   border: none;
   border-radius: 15px;
   color: white;
@@ -123,8 +124,14 @@ header {
   padding: 10px 30px;
 }
 
-.search-button {
+.search-button,
+.close-button {
   background: #142850;
+}
+
+.fail-text {
+  color: #292929;
+  font-size: 18px;
 }
 
 .restaurant-list-header,
@@ -278,13 +285,37 @@ li {
   color: #142850;
 }
 
-.modal {
+.modal,
+.loading-modal,
+.fail-modal {
   background: rgba(41, 41, 41, 0.55);
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   right: 0;
+}
+
+.loading-modal,
+.fail-modal {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fail-container {
+  background-color: white;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.loading-gif {
+  width: 120px;
 }
 
 .container {
@@ -294,8 +325,10 @@ li {
   justify-content: space-between;
 }
 
-.randomize-list-container {
+.randomize-list-container,
+.no-restaurant-container {
   height: 88%;
+  width: 100%;
 }
 
 .restaurant-randomize,
@@ -307,6 +340,20 @@ li {
 .visit-yelp-button {
   background-color: #00909e;
   text-decoration: none;
+}
+
+.no-restaurant-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-restaurant {
+  font-size: 1.3rem;
+}
+
+.white {
+  color: white;
 }
 
 .eat-here-container {
@@ -381,7 +428,8 @@ li:hover,
 .unchecked:hover,
 .checked:hover,
 .visit-yelp-button:hover,
-.app-name:hover {
+.app-name:hover,
+.close-button:hover {
   cursor: pointer;
 }
 
@@ -398,7 +446,8 @@ li:hover,
   box-shadow: 4px 4px 2px #142850;
 }
 
-.search-button:hover {
+.search-button:hover,
+.close-button:hover {
   box-shadow: 4px 4px 2px #00909e;
 }
 

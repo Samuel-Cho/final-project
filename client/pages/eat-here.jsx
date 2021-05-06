@@ -1,13 +1,17 @@
 import React from 'react';
 import { restaurantHours } from '../lib';
 import StarRating from '../components/star-rating';
+import Loading from '../components/loading';
+import NoRestuarants from '../components/no-restaurants';
 
 export default class EatHere extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurant: {},
-      dayOfWeek: null
+      dayOfWeek: null,
+      loading: true,
+      restaurants: []
     };
   }
 
@@ -15,27 +19,67 @@ export default class EatHere extends React.Component {
     const date = new Date();
     const day = date.getDay();
     fetch('/api/randomizerListAll')
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return false;
+        }
+      })
       .then(results => {
-        const index = Math.floor(Math.random() * (results.length));
-        const restaurantChosen = results[index];
-        fetch(`/api/business/${restaurantChosen.id}`)
-          .then(res => res.json())
-          .then(result => {
-            this.setState({ dayOfWeek: day, restaurant: result });
-          });
+        if (results) {
+          const index = Math.floor(Math.random() * (results.length));
+          const restaurantChosen = results[index];
+          if (restaurantChosen) {
+            fetch(`/api/business/${restaurantChosen.id}`)
+              .then(res => {
+                if (res.ok) {
+                  return res.json();
+                } else {
+                  return false;
+                }
+              })
+              .then(result => {
+                if (result) {
+                  this.setState({ dayOfWeek: day, restaurant: result, loading: false });
+                } else {
+                  this.setState({ loading: false, restaurants: ['error'] });
+                }
+              })
+              .catch(err => {
+                console.error(err);
+                this.setState({ loading: false, restaurants: ['error'] });
+              });
+          } else {
+            this.setState({ loading: false });
+          }
+        } else {
+          this.setState({ loading: false, restaurants: ['error'] });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        this.setState({ loading: false, restaurants: ['error'] });
       });
   }
 
   render() {
-    const { restaurant } = this.state;
-    if (this.state.dayOfWeek !== null) {
-      const open = this.state.restaurant.hours[0].open[this.state.dayOfWeek].start;
-      const close = this.state.restaurant.hours[0].open[this.state.dayOfWeek].end;
+    const { restaurant, restaurants, dayOfWeek, loading } = this.state;
+    if (restaurants[0] === 'error') {
+      return (
+        <>
+          <Loading loading={loading} />
+          <NoRestuarants error={true} />
+        </>
+      );
+    } else if (dayOfWeek !== null) {
+      const open = restaurant.hours[0].open[dayOfWeek].start;
+      const close = restaurant.hours[0].open[dayOfWeek].end;
       const openHour = restaurantHours(open);
       const closeHour = restaurantHours(close);
       return (
         <>
+          <Loading loading={this.state.loading} />
           <div className="eat-here-container mobile">
             <div className="eat-here-header">
               <h2 className="eat-here">Eat Here!</h2>
@@ -86,7 +130,12 @@ export default class EatHere extends React.Component {
         </>
       );
     } else {
-      return null;
+      return (
+        <>
+          <Loading loading={loading} />
+          <NoRestuarants />
+        </>
+      );
     }
   }
 }

@@ -7,15 +7,18 @@ import PageWrapper from './components/page-wrapper';
 import AppDrawer from './components/app-drawer';
 import RandomizeList from './pages/randomize-list';
 import EatHere from './pages/eat-here';
+import CheckIconFail from './components/check-icon-fail';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       route: parseRoute(window.location.hash),
-      drawerClosed: true
+      drawerClosed: true,
+      checkIconModalClosed: true
     };
     this.handleClick = this.handleClick.bind(this);
+    this.closeCheckIconModal = this.closeCheckIconModal.bind(this);
   }
 
   handleClick(event) {
@@ -24,6 +27,10 @@ export default class App extends React.Component {
     } else {
       this.setState({ drawerClosed: true });
     }
+  }
+
+  closeCheckIconModal(data) {
+    this.setState({ checkIconModalClosed: data });
   }
 
   componentDidMount() {
@@ -50,14 +57,15 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { route, drawerClosed } = this.state;
-    const { handleClick } = this;
-    const contextValue = { route, drawerClosed, handleClick };
+    const { route, drawerClosed, checkIconModalClosed } = this.state;
+    const { handleClick, closeCheckIconModal } = this;
+    const contextValue = { route, drawerClosed, handleClick, closeCheckIconModal };
     return (
       <AppContext.Provider value={contextValue}>
         <>
           <PageWrapper path={this.state.route.path}>
             <AppDrawer />
+            <CheckIconFail closed={checkIconModalClosed} />
             <Header path={this.state.route.path}/>
             {this.renderPage()}
           </PageWrapper>

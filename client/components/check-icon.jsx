@@ -1,4 +1,5 @@
 import React from 'react';
+import { AppContext } from '../lib';
 
 export default class CheckIcon extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class CheckIcon extends React.Component {
   }
 
   handleClick(event) {
+    const { closeCheckIconModal } = this.context;
     if (this.state.isSelected === false) {
       const reqPost = {
         method: 'POST',
@@ -30,9 +32,23 @@ export default class CheckIcon extends React.Component {
         body: JSON.stringify(this.state.restaurant)
       };
       fetch('/api/save', reqPost)
-        .then(res => res.json())
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            return false;
+          }
+        })
         .then(results => {
-          this.setState({ isSelected: true });
+          if (results) {
+            this.setState({ isSelected: true });
+          } else {
+            closeCheckIconModal(false);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          closeCheckIconModal(false);
         });
     } else {
       const reqDelete = {
@@ -43,9 +59,23 @@ export default class CheckIcon extends React.Component {
         body: JSON.stringify(this.state.restaurant)
       };
       fetch('/api/delete', reqDelete)
-        .then(res => res.json())
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            return false;
+          }
+        })
         .then(results => {
-          this.setState({ isSelected: false });
+          if (results) {
+            this.setState({ isSelected: false });
+          } else {
+            closeCheckIconModal(false);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          closeCheckIconModal(false);
         });
     }
   }
@@ -73,3 +103,5 @@ export default class CheckIcon extends React.Component {
     }
   }
 }
+
+CheckIcon.contextType = AppContext;
