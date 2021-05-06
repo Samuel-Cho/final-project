@@ -12,7 +12,6 @@ export default class CheckIconFail extends React.Component {
 
   handleClick(event) {
     const { closeCheckIconModal } = this.context;
-    // this.setState({ checkIconModalClosed: true });
     closeCheckIconModal(true);
   }
 
