@@ -279,7 +279,8 @@ li {
 }
 
 .modal,
-.loading-modal {
+.loading-modal,
+.fail-modal {
   background: rgba(41, 41, 41, 0.55);
   height: 100%;
   width: 100%;
@@ -288,7 +289,8 @@ li {
   right: 0;
 }
 
-.loading-modal {
+.loading-modal,
+.fail-modal {
   z-index: 1;
   display: flex;
   justify-content: center;
