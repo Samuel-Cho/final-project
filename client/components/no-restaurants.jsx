@@ -20,13 +20,13 @@ export default class NoRestaurant extends React.Component {
       if (this.context.route.path === 'searchResults') {
         return (
           <div className="no-restaurant-container">
-            <p className="no-restaurant">Error with API has occured</p>
+            <p className="no-restaurant">Error connecting with API has occured</p>
           </div>
         );
       } else {
         return (
           <div className="no-restaurant-container">
-            <p className="no-restaurant white">Error with API has occured</p>
+            <p className="no-restaurant white">Error connecting with API has occured</p>
           </div>
         );
       }

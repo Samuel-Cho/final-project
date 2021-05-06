@@ -48,6 +48,10 @@ export default class RandomizeList extends React.Component {
           this.setState({ loading: false, restaurants: ['error'] });
         }
       });
+    // .catch(err => {
+    //   console.error(err);
+    //   this.setState({ loading: false, restaurants: ['error'] });
+    // });
   }
 
   render() {
