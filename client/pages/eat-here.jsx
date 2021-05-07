@@ -86,7 +86,7 @@ export default class EatHere extends React.Component {
             </div>
             <div className="eat-here-details">
               <div className="eat-here-image-container">
-                <img className="eat-here-restaurant-image" src={restaurant.image_url}></img>
+                <img className="eat-here-restaurant-image" alt="restaurant image" src={restaurant.image_url}></img>
               </div>
               <div className="eat-here-bottom-container">
                 <div className="eat-here-detail-container">
@@ -109,7 +109,7 @@ export default class EatHere extends React.Component {
             </div>
             <div className="eat-here-details">
               <div className="eat-here-image-container">
-                <img className="eat-here-restaurant-image" src={restaurant.image_url}></img>
+                <img className="eat-here-restaurant-image" alt="restaurant image" src={restaurant.image_url}></img>
               </div>
               <div className="eat-here-bottom-container">
                 <div className="eat-here-detail-container">
