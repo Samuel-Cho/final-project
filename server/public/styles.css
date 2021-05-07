@@ -119,7 +119,6 @@ header {
 .close-button {
   border: none;
   border-radius: 15px;
-  color: white;
   font-size: 18px;
   padding: 10px 30px;
 }
@@ -127,6 +126,7 @@ header {
 .search-button,
 .close-button {
   background: #142850;
+  color: white;
 }
 
 .fail-text {
@@ -338,9 +338,15 @@ li {
 
 .randomize-button,
 .visit-yelp-button {
-  background-color: #00909e;
+  background-color: #dae1e7;
+  color: #292929;
   text-decoration: none;
 }
+
+/* .visit-yelp-button {
+  background-color: #00909e;
+  text-decoration: none;
+} */
 
 .no-restaurant-container {
   display: flex;
@@ -447,7 +453,8 @@ li:hover,
 }
 
 .search-button:hover,
-.close-button:hover {
+.close-button:hover,
+.randomize-button:hover {
   box-shadow: 4px 4px 2px #00909e;
 }
 
@@ -459,10 +466,6 @@ li:hover,
 .checked:hover,
 .unchecked:hover {
   color: #142850;
-}
-
-.randomize-button:hover {
-  box-shadow: 4px 4px 2px white;
 }
 
 .desktop {

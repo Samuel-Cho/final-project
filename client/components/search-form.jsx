@@ -66,7 +66,7 @@ export default class SearchForm extends React.Component {
   }
 
   handleClick(event) {
-    const { id } = event.target;
+    const id = event.target.getAttribute('data-foodtype');
     this.setState({ foodType: id });
   }
 
@@ -79,11 +79,11 @@ export default class SearchForm extends React.Component {
     const divItemsMobile = foodTypeList.map(foodType => {
       if (foodType.id === this.state.foodType) {
         return (
-          <button type="button" onClick={this.handleClick} className="food-type selected" id={foodType.id} key={foodType.id}>{foodType.text}</button>
+          <button type="button" onClick={this.handleClick} className="food-type selected" data-foodtype={foodType.id} key={foodType.id}>{foodType.text}</button>
         );
       } else {
         return (
-          <button type="button" onClick={this.handleClick} className="food-type" id={foodType.id} key={foodType.id}>{foodType.text}</button>
+          <button type="button" onClick={this.handleClick} className="food-type" data-foodtype={foodType.id} key={foodType.id}>{foodType.text}</button>
         );
       }
     });
@@ -91,13 +91,13 @@ export default class SearchForm extends React.Component {
       if (foodType.id === this.state.foodType) {
         return (
           <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
-            <button type="button" onClick={this.handleClick} className="food-type selected" id={foodType.id}>{foodType.text}</button>
+            <button type="button" onClick={this.handleClick} className="food-type selected" data-foodtype={foodType.id}>{foodType.text}</button>
           </div>
         );
       } else {
         return (
           <div key={foodType.id} className={`column-one-third ${foodType.position}`}>
-            <button type="button" onClick={this.handleClick} className="food-type" id={foodType.id}>{foodType.text}</button>
+            <button type="button" onClick={this.handleClick} className="food-type" data-foodtype={foodType.id}>{foodType.text}</button>
           </div>
         );
       }
@@ -108,7 +108,7 @@ export default class SearchForm extends React.Component {
           <div className="location-container">
             <input
               required
-              id="location"
+              id="location-mobile"
               type="text"
               name="location"
               className="location-search"
@@ -127,7 +127,7 @@ export default class SearchForm extends React.Component {
           <div className="location-container">
             <input
               required
-              id="location"
+              id="location-desktop"
               type="text"
               name="location"
               className="location-search"

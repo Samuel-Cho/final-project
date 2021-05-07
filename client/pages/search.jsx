@@ -4,9 +4,9 @@ import SearchForm from '../components/search-form';
 export default class Search extends React.Component {
   render() {
     return (
-      <div className="search-container">
+      <main className="search-container">
         <SearchForm />
-      </div>
+      </main>
     );
   }
 }
