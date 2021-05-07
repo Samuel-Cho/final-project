@@ -77,7 +77,7 @@ export default class SearchResults extends React.Component {
           <li key={restaurant.alias} className="restaurant one-third-column" id={restaurant.id}>
             <div className="image-container">
               <a href={restaurant.url} target="_blank" rel="noreferrer">
-                <img className="restaurant-image" src={restaurant.image_url}></img>
+                <img className="restaurant-image" alt="restaurant image" src={restaurant.image_url}></img>
               </a>
             </div>
             <div className="bottom-container">
