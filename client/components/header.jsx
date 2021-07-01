@@ -26,7 +26,7 @@ export default class Header extends React.Component {
               <i className="fas fa-bars drawer" onClick={handleClick}></i>
             </div>
             <div className="app-name-container column-three-fourth">
-              <a href="#" className="app-name">Teeter Taste</a>
+              <a href="#search" className="app-name">Teeter Taste</a>
             </div>
           </header>
           <header className="desktop">
@@ -35,7 +35,7 @@ export default class Header extends React.Component {
               <h2 className="page-name">Search Restaurant</h2>
             </div>
             <div className="app-name-container column-three-fourth">
-              <a href="#" className="app-name">Teeter Taste</a>
+              <a href="#search" className="app-name">Teeter Taste</a>
             </div>
           </header>
         </>
@@ -48,7 +48,7 @@ export default class Header extends React.Component {
               <i className="fas fa-bars drawer" onClick={handleClick}></i>
             </div>
             <div className="app-name-container column-three-fourth">
-              <a href="#" className="app-name">Teeter Taste</a>
+              <a href="#search" className="app-name">Teeter Taste</a>
             </div>
           </header>
           <header className="desktop">
@@ -57,7 +57,7 @@ export default class Header extends React.Component {
               <h2 className="page-name">Restaurant List</h2>
             </div>
             <div className="app-name-container column-three-fourth">
-              <a href="#" className="app-name">Teeter Taste</a>
+              <a href="#search" className="app-name">Teeter Taste</a>
             </div>
           </header>
         </>
@@ -70,7 +70,7 @@ export default class Header extends React.Component {
               <i className="fas fa-bars drawer" onClick={handleClick}></i>
             </div>
             <div className="app-name-container column-three-fourth">
-              <a href="#" className="app-name">Teeter Taste</a>
+              <a href="#search" className="app-name">Teeter Taste</a>
             </div>
           </header>
           <header className="desktop">
@@ -79,7 +79,7 @@ export default class Header extends React.Component {
               <h2 className="page-name">Randomize List</h2>
             </div>
             <div className="app-name-container column-three-fourth">
-              <a href="#" className="app-name">Teeter Taste</a>
+              <a href="#search" className="app-name">Teeter Taste</a>
             </div>
           </header>
         </>
@@ -91,7 +91,7 @@ export default class Header extends React.Component {
             <i className="fas fa-bars drawer" onClick={handleClick}></i>
           </div>
           <div className="app-name-container column-three-fourth">
-            <a href="#" className="app-name">Teeter Taste</a>
+            <a href="#search" className="app-name">Teeter Taste</a>
           </div>
         </header>
       );

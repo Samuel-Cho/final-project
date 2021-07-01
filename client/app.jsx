@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './pages/home';
+import Search from './pages/search';
 import Header from './components/header';
 import { parseRoute, AppContext } from './lib';
 import SearchResults from './pages/search-results';
@@ -41,8 +42,10 @@ export default class App extends React.Component {
   }
 
   renderPage() {
-    if (this.state.route.path === '' || this.state.route.path === 'search') {
+    if (this.state.route.path === '') {
       return <Home />;
+    } else if (this.state.route.path === 'search') {
+      return <Search />;
     } else if (this.state.route.path === 'searchResults') {
       return (
         <SearchResults
