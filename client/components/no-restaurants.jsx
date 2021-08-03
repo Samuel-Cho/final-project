@@ -40,7 +40,7 @@ export default class NoRestaurant extends React.Component {
     } else {
       return (
         <div className="no-restaurant-container">
-          <p className="no-restaurant white">No Restaurants Available</p>
+          <p className="no-restaurant white">Add Restaurants from Search/Restaurant List</p>
         </div>
       );
     }
