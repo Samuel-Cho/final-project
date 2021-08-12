@@ -5,7 +5,9 @@ export default function Home(props) {
   return (
     <>
       {/* <Search /> */}
-      <div>test</div>
+      <div className="homepage">
+        test
+      </div>
     </>
   );
 }
