@@ -6,7 +6,9 @@ export default function Home(props) {
     <>
       {/* <Search /> */}
       <div className="homepage">
-        test
+        <div className="homepage-content">
+          <div>test</div>
+        </div>
       </div>
     </>
   );
